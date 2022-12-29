@@ -52,14 +52,15 @@ class Hero extends React.Component {
                       style={{ width: "400px" }}
                     />
                     <p className="lead text-white">
-                      A beautiful Design System for Bootstrap 4. It's Free and
-                      Open Source (updated).
+                        We are a business that uses digital disruption to create goods and services that simplify life. <br/>
+                        Our goal is to build a business that uses technology that simplifies life to enable people and machines to transform for the better, 
+                        faster, and greater.
                     </p>
                     <div className="btn-wrapper mt-5">
                       <Button
                         className="btn-white btn-icon mb-3 mb-sm-0"
                         color="default"
-                        href="https://www.creative-tim.com/product/argon-design-system-react?ref=adsr-landing-page"
+                        href="https://reactjs.org/"
                         size="lg"
                       >
                         <span className="btn-inner--icon mr-1">
@@ -70,7 +71,7 @@ class Hero extends React.Component {
                       <Button
                         className="btn-icon mb-3 mb-sm-0"
                         color="github"
-                        href="https://github.com/creativetimofficial/argon-design-system-react"
+                        href="https://github.com/SOFTC-Organization"
                         size="lg"
                         target="_blank"
                       >
@@ -78,7 +79,7 @@ class Hero extends React.Component {
                           <i className="fa fa-github" />
                         </span>
                         <span className="btn-inner--text">
-                          <span className="text-warning mr-1">Star us</span>
+                          <span className="text-warning mr-1">Follow us</span>
                           on Github
                         </span>
                       </Button>
