@@ -43,7 +43,7 @@ class Login extends React.Component {
     return (
       <>
         <section className="section section-lg section-shaped">
-          <div className="shape shape-style-1 shape-default">
+          <div className="shape shape-style-1 shape-primary">
             <span />
             <span />
             <span />

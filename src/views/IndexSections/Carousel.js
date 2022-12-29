@@ -40,7 +40,7 @@ class Carousel extends React.Component {
     return (
       <>
         <section className="section section-shaped">
-          <div className="shape shape-style-1 shape-default">
+          <div className="shape shape-style-1 shape-primary">
             <span />
             <span />
             <span />
