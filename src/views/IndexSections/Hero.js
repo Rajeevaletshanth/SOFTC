@@ -52,9 +52,7 @@ class Hero extends React.Component {
                       style={{ width: "400px" }}
                     />
                     <p className="lead text-white">
-                        We are a business that uses digital disruption to create goods and services that simplify life. <br/>
-                        Our goal is to build a business that uses technology that simplifies life to enable people and machines to transform for the better, 
-                        faster, and greater.
+                        We are a business that uses digital disruption to create goods and services that simplify life.
                     </p>
                     <div className="btn-wrapper mt-5">
                       <Button
