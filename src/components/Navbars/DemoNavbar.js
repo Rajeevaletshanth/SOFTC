@@ -22,6 +22,7 @@ import {
   UncontrolledTooltip
 } from "reactstrap";
 
+
 class DemoNavbar extends React.Component {
   componentDidMount() {
     let headroom = new Headroom(document.getElementById("navbar-main"));
@@ -57,7 +58,7 @@ class DemoNavbar extends React.Component {
             <Container>
               <NavbarBrand className="mr-lg-5" to="/" tag={Link}>
                 <img
-                  alt="..."
+                  alt="Softc"
                   // style={{ width: "150px", height:"90px" }}
                   src={require("assets/img/softc_logos/logo-white-notag.png")}
                 />

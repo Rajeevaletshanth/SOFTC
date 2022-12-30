@@ -16,19 +16,20 @@
 
 */
 import React from "react";
-
+import '../../../assets/css/main.css'
 // reactstrap components
 import { Button, Container, Row, Col } from "reactstrap";
+import Particles from "../components/ReactParticles";
 
-class Hero extends React.Component {
-  render() {
+const Hero = () =>  {
     return (
       <>
-        <div className="position-relative ">
-          {/* Hero for FREE version */}
-          <section className="section section-hero section-shaped">
+        <div className="position-relative">
+          {/* Hero for FREE version */}         
+          <section className="section section-hero section-shaped main-theme" >
+            <Particles/>
             {/* Background circles */}
-            <div className="shape shape-style-1 shape-dark">
+            <div className="shape shape-style-1 shape-dark  main-theme">
               <span className="span-150" />
               <span className="span-50" />
               <span className="span-50" />
@@ -47,6 +48,7 @@ class Hero extends React.Component {
                     <img
                       alt="SOFTC Logo"
                       className="img-fluid"
+                      // src={require("assets/img/brand/argon-react-white.png")}
                       src={require("assets/img/softc_logos/logo-white.png")}
                       style={{ width: "400px" }}
                     />
@@ -81,7 +83,7 @@ class Hero extends React.Component {
                         </span>
                       </Button>
                     </div>
-                    <div className="mt-5">
+                    {/* <div className="mt-5">
                       <small className="text-white font-weight-bold mb-0 mr-2">
                         *Developed by
                       </small>
@@ -90,7 +92,7 @@ class Hero extends React.Component {
                         style={{ height: "25px" }}
                         src={require("assets/img/softc_logos/logo-white-notag.png")}
                       />
-                    </div>
+                    </div> */}
                   </Col>
                 </Row>
               </div>
@@ -115,7 +117,7 @@ class Hero extends React.Component {
         </div>
       </>
     );
-  }
+  
 }
 
 export default Hero;
