@@ -78,7 +78,7 @@ const Hero = () =>  {
                           <i className="fa fa-github" />
                         </span>
                         <span className="btn-inner--text">
-                          <span className="text-warning mr-1">Follow us</span>
+                          <span className="text-warning mr-1">Star us</span>
                           on Github
                         </span>
                       </Button>
