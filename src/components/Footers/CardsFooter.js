@@ -27,7 +27,7 @@ class CardsFooter extends React.Component {
                   <Link to="/landing-page">
                     <CardImg
                       alt="..."
-                      src={require("assets/img/theme/landing.jpg")}
+                      src={require("assets/img/advertisements/work with us new.jpg")}
                     />
                   </Link>
                 </Card>
@@ -37,7 +37,8 @@ class CardsFooter extends React.Component {
                   <Link to="/profile-page">
                     <CardImg
                       alt="..."
-                      src={require("assets/img/theme/profile.jpg")}
+                      className="rounded rounded-5"
+                      src={require("assets/img/advertisements/our team new.jpg")}
                     />
                   </Link>
                 </Card>
@@ -58,7 +59,7 @@ class CardsFooter extends React.Component {
                 <Button
                   className="btn-icon-only rounded-circle"
                   color="twitter"
-                  href="https://twitter.com/creativetim"
+                  href={`${socialMediaLink.twitter}`}
                   id="tooltip475038074"
                   target="_blank"
                 >
@@ -72,7 +73,7 @@ class CardsFooter extends React.Component {
                 <Button
                   className="btn-icon-only rounded-circle ml-1"
                   color="facebook"
-                  href="https://www.facebook.com/creativetim"
+                  href={`${socialMediaLink.facebook}`}
                   id="tooltip837440414"
                   target="_blank"
                 >
@@ -86,7 +87,7 @@ class CardsFooter extends React.Component {
                 <Button
                   className="btn-icon-only rounded-circle ml-1"
                   color="dribbble"
-                  href="https://dribbble.com/creativetim"
+                  href={`${socialMediaLink.dribble}`}
                   id="tooltip829810202"
                   target="_blank"
                 >
@@ -100,7 +101,7 @@ class CardsFooter extends React.Component {
                 <Button
                   className="btn-icon-only rounded-circle ml-1"
                   color="github"
-                  href="https://github.com/creativetimofficial"
+                  href={`${socialMediaLink.github}`}
                   id="tooltip495507257"
                   target="_blank"
                 >
@@ -125,7 +126,8 @@ class CardsFooter extends React.Component {
                     All rights reserved by 
                       <img
                         alt="..."
-                        style={{ height: "25px" }}
+                        className="ml-1"
+                        style={{ height: "17px" }}
                         src={require("assets/img/softc_logos/logo-notag.png")}
                       />
                   </a>
@@ -158,14 +160,14 @@ class CardsFooter extends React.Component {
                       Blog
                     </NavLink>
                   </NavItem>
-                  <NavItem>
+                  {/* <NavItem>
                     <NavLink
                       href="https://github.com/creativetimofficial/argon-design-system-react/blob/master/LICENSE.md"
                       target="_blank"
                     >
                       MIT License
                     </NavLink>
-                  </NavItem>
+                  </NavItem> */}
                 </Nav>
               </Col>
             </Row>
