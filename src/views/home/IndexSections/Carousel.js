@@ -23,15 +23,15 @@ import { Button, Container, Row, Col, UncontrolledCarousel } from "reactstrap";
 const items = [
   {
     src: require("assets/img/theme/img-1-1200x1000.jpg"),
-    altText: "",
-    caption: "",
-    header: ""
+    altText: "bffbb",
+    caption: "sdbdbsd",
+    header: "sdbsdb"
   },
   {
     src: require("assets/img/theme/img-2-1200x1000.jpg"),
-    altText: "",
-    caption: "",
-    header: ""
+    altText: "sdngg",
+    caption: "sgn",
+    header: "xncn"
   }
 ];
 
@@ -39,14 +39,14 @@ class Carousel extends React.Component {
   render() {
     return (
       <>
-        <section className="section section-shaped">
-          <div className="shape shape-style-1 shape-primary">
+        <section className="section section-shaped ">
+          <div className="shape shape-style-1 bg-dark ">
+            {/* <span />
             <span />
             <span />
             <span />
             <span />
-            <span />
-            <span />
+            <span /> */}
           </div>
           <Container className="py-md">
             <Row className="justify-content-between align-items-center">

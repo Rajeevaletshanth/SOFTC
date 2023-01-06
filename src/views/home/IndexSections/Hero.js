@@ -15,58 +15,70 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import React from "react";
-import '../../../assets/css/main.css'
+import React, { useState } from "react";
+import "../../../assets/css/main.css";
 // reactstrap components
 import { Button, Container, Row, Col } from "reactstrap";
 import Particles from "../components/ReactParticles";
+// import Modals from '../components/Modals'
+// import Modals from "./Modals";
+import DefaultModal from "../components/DefaultModal";
+import VideoModal from "../components/VideoModal";
 
-const Hero = () =>  {
-    return (
-      <>
-        <div className="position-relative">
-          {/* Hero for FREE version */}         
-          <section className="section section-hero section-shaped main-theme" >
-            <Particles/>
-            {/* Background circles */}
-            <div className="shape shape-style-1 shape-dark  main-theme">
-              <span className="span-150" />
-              <span className="span-50" />
-              <span className="span-50" />
-              <span className="span-75" />
-              <span className="span-100" />
-              <span className="span-75" />
-              <span className="span-50" />
-              <span className="span-100" />
-              <span className="span-50" />
-              <span className="span-100" />
-            </div>
-            <Container className="shape-container d-flex align-items-center py-lg">
-              <div className="col px-0">
-                <Row className="align-items-center justify-content-center">
-                  <Col className="text-center" lg="6">
-                    <img
-                      alt="SOFTC Logo"
-                      className="img-fluid"
-                      // src={require("assets/img/brand/argon-react-white.png")}
-                      src={require("assets/img/softc_logos/logo-white.png")}
-                      style={{ width: "400px" }}
-                    />
-                    <p className="lead text-white">
-                        We are a business that uses digital disruption to create goods and services that simplify life.
-                    </p>
-                    <div className="btn-wrapper mt-5">
+const Hero = () => {
+
+  return (
+    <>
+      <div className="position-relative">
+        {/* Hero for FREE version */}
+        <section className="section section-hero  main-theme">
+          <Particles />
+          {/* Background circles */}
+          <div className="shape shape-style-1 shape-dark  main-theme">
+            <span className="span-150" />
+            <span className="span-50" />
+            <span className="span-50" />
+            <span className="span-75" />
+            <span className="span-100" />
+            <span className="span-75" />
+            <span className="span-50" />
+            <span className="span-100" />
+            <span className="span-50" />
+            <span className="span-100" />
+          </div>
+          <Container className="shape-container d-flex align-items-center py-lg">
+            <div className="col px-0">
+              <Row className="align-items-center justify-content-center">
+                <Col className="text-center" lg="8">
+                  <img
+                    alt="SOFTC Logo"
+                    className="img-fluid"
+                    // src={require("assets/img/brand/argon-react-white.png")}
+                    src={require("assets/img/softc_logos/logo-white.png")}
+                    style={{ width: "400px" }}
+                  />
+                  <p className="lead text-white">
+                    At SOFTC, we envision a world where technology empowers individuals and businesses to unlock their full potential and achieve greatness. Our software serves as the catalyst for this transformation, driving innovation and enabling our clients to reach new heights.
+                    {/* We don't want to showcase our competence. Despite the fact that we are a small developers team, we will definitely astonish you. */}
+                  </p>
+                  
+                
+                  <div className="btn-wrapper mt-5">
+                      {/* <VideoModal name="Watch Intro" btnType="white"/> */}
                       <Button
-                        className="btn-white btn-icon mb-3 mb-sm-0"
-                        color="default"
-                        href="https://reactjs.org/"
+                        className="btn-neutral btn-icon"
                         size="lg"
+                        color="default"
+                        href={require("../../../assets/app/softc-mobile-app.apk")} 
+                        download="softc-android-app"
                       >
-                        <span className="btn-inner--icon mr-1">
-                          <i className="ni ni-cloud-download-95" />
+                        <span className="btn-inner--icon">
+                          <i className="fa fa-android mr-2" />
                         </span>
-                        <span className="btn-inner--text">Download React</span>
-                      </Button>{" "}
+                        <span className="nav-link-inner--text ml-1">
+                          Download App                        
+                        </span>
+                      </Button>
                       <Button
                         className="btn-icon mb-3 mb-sm-0"
                         color="github"
@@ -83,7 +95,8 @@ const Hero = () =>  {
                         </span>
                       </Button>
                     </div>
-                    {/* <div className="mt-5">
+
+                  {/* <div className="mt-5">
                       <small className="text-white font-weight-bold mb-0 mr-2">
                         *Developed by
                       </small>
@@ -93,31 +106,27 @@ const Hero = () =>  {
                         src={require("assets/img/softc_logos/logo-white-notag.png")}
                       />
                     </div> */}
-                  </Col>
-                </Row>
-              </div>
-            </Container>
-            {/* SVG separator */}
-            <div className="separator separator-bottom separator-skew zindex-100">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                preserveAspectRatio="none"
-                version="1.1"
-                viewBox="0 0 2560 100"
-                x="0"
-                y="0"
-              >
-                <polygon
-                  className="fill-white"
-                  points="2560 0 2560 100 0 100"
-                />
-              </svg>
+                </Col>
+              </Row>
             </div>
-          </section>
-        </div>
-      </>
-    );
-  
-}
+          </Container>
+          {/* SVG separator */}
+          <div className="separator separator-bottom separator-skew zindex-100">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              preserveAspectRatio="none"
+              version="1.1"
+              viewBox="0 0 2560 100"
+              x="0"
+              y="0"
+            >
+              <polygon className="fill-white" points="2560 0 2560 100 0 100" />
+            </svg>
+          </div>
+        </section>
+      </div>
+    </>
+  );
+};
 
 export default Hero;

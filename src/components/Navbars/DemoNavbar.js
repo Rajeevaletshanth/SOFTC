@@ -26,7 +26,6 @@ import {
 class DemoNavbar extends React.Component {
   componentDidMount() {
     let headroom = new Headroom(document.getElementById("navbar-main"));
-    // initialise
     headroom.init();
   }
   state = {
@@ -95,7 +94,7 @@ class DemoNavbar extends React.Component {
                   <UncontrolledDropdown nav>
                     <DropdownToggle nav>
                       <i className="ni ni-ui-04 d-lg-none mr-1" />
-                      <span className="nav-link-inner--text">Components</span>
+                      <span className="nav-link-inner--text">Services</span>
                     </DropdownToggle>
                     <DropdownMenu className="dropdown-menu-xl">
                       <div className="dropdown-menu-inner">
@@ -109,11 +108,10 @@ class DemoNavbar extends React.Component {
                           </div>
                           <Media body className="ml-3">
                             <h6 className="heading text-primary mb-md-1">
-                              Getting started
+                              Software Solution
                             </h6>
                             <p className="description d-none d-md-inline-block mb-0">
-                              Learn how to use Argon compiling Scss, change
-                              brand colors and more.
+                              The digitalization of our clients' businesses is our primary business goal.
                             </p>
                           </Media>
                         </Media>
@@ -159,20 +157,23 @@ class DemoNavbar extends React.Component {
                   <UncontrolledDropdown nav>
                     <DropdownToggle nav>
                       <i className="ni ni-collection d-lg-none mr-1" />
-                      <span className="nav-link-inner--text">Examples</span>
+                      <span className="nav-link-inner--text">About</span>
                     </DropdownToggle>
                     <DropdownMenu>
-                      <DropdownItem to="/landing-page" tag={Link}>
-                        Landing
+                      <DropdownItem to="/aboutus" tag={Link}>
+                        About Us
                       </DropdownItem>
-                      <DropdownItem to="/profile-page" tag={Link}>
-                        Profile
+                      <DropdownItem to="/careers" tag={Link}>
+                        Careers at SOFTC
                       </DropdownItem>
-                      <DropdownItem to="/login-page" tag={Link}>
-                        Login
+                      <DropdownItem to="/news" tag={Link}>
+                        News
                       </DropdownItem>
-                      <DropdownItem to="/register-page" tag={Link}>
-                        Register
+                      <DropdownItem to="/events" tag={Link}>
+                        Events
+                      </DropdownItem>
+                      <DropdownItem to="/merchants" tag={Link}>
+                        Merchants
                       </DropdownItem>
                     </DropdownMenu>
                   </UncontrolledDropdown>
@@ -246,14 +247,14 @@ class DemoNavbar extends React.Component {
                     <Button
                       className="btn-neutral btn-icon"
                       color="default"
-                      href="#"
-                      target="_blank"
+                      href={require("../../assets/app/softc-mobile-app.apk")} 
+                      download="softc-android-app"
                     >
                       <span className="btn-inner--icon">
-                        <i className="fa fa-cloud-download mr-2" />
+                        <i className="fa fa-android mr-2" />
                       </span>
                       <span className="nav-link-inner--text ml-1">
-                        Download
+                        Download App
                       </span>
                     </Button>
                   </NavItem>

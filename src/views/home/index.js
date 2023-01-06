@@ -18,7 +18,7 @@
 import React from "react";
 
 // reactstrap components
-import { Container, Row } from "reactstrap";
+import { Container, Row, Col } from "reactstrap";
 
 // core components
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
@@ -46,6 +46,9 @@ import Icons from "./IndexSections/Icons.js";
 import Login from "./IndexSections/Login.js";
 import Download from "./IndexSections/Download.js";
 
+//Container 
+import About from "./containers/About.js";
+
 class Index extends React.Component {
   componentDidMount() {
     document.documentElement.scrollTop = 0;
@@ -58,15 +61,26 @@ class Index extends React.Component {
         <DemoNavbar />
         <main ref="main">
           <Hero />
-          {/* <Buttons />
-          <Inputs />
-          <section className="section">
+          <About />
+          <div className="py-5 bg-secondary">
             <Container>
-              <CustomControls />
-              <Menus />
+              <h3>Our Products</h3>
+              <Row>
+                <Col style={{ minHeight: "350px" }}>
+                  {/* <img
+                      alt="about us"
+                      className="img-fluid rounded"
+                      src={require("../../assets/img/contents/about us 2.jpg")}
+                      style={{ minWidth: "100%", minHeight: "100%" }}
+                    /> */}
+                </Col>
+              </Row>
             </Container>
-          </section>
-          <Navbars />
+          </div>
+          {/* <Carousel /> */}
+          {/* <Buttons /> */}
+          {/* <Inputs /> */}
+         {/*  <Navbars />
           <section className="section section-components">
             <Container>
               <Tabs />

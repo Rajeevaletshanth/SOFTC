@@ -1,13 +1,12 @@
 .main-theme{
     /* background-image: url("../../../public/assets/img/our_team.jpg"); */
-    background-image: linear-gradient(to right, #2d2d54, #262644);
+    background: radial-gradient(#192f53, #1a1a1a);
+    /* background: linear-gradient(to right, #131313, #2b1a35); */
     background-repeat: no-repeat;
     background-attachment: fixed;
+    background-size: auto;
 }
 
 .headroom--pinned {
-    display: block;
-    background-color: aqua;
+    background-color: red;
 }
-
-
