@@ -1,6 +1,6 @@
 .main-theme{
     /* background-image: url("../../../public/assets/img/our_team.jpg"); */
-    background: radial-gradient(#192f53, #1a1a1a);
+    background: radial-gradient(#181818, #131313);
     /* background: linear-gradient(to right, #131313, #2b1a35); */
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -9,4 +9,14 @@
 
 .headroom--pinned {
     background-color: red;
+}
+
+.transparent-background{
+    background: rgb(0, 0, 0); /* Fallback for older browsers without RGBA-support */
+    background: rgba(0, 0, 0, 0.2);
+    /* border-radius: 70px; */
+    /* border:  rgba(82, 3, 156, 0.3) solid 2px; */
+    /* -webkit-box-shadow: 0px 0px 1px #7d00d1;
+       -moz-box-shadow: 0px 0px 1px #7d00d1;
+            box-shadow: 0px 0px 1px #7d00d1; */
 }

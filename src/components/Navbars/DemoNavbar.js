@@ -251,9 +251,9 @@ class DemoNavbar extends React.Component {
                       download="softc-android-app"
                     >
                       <span className="btn-inner--icon">
-                        <i className="fa fa-android mr-2" />
+                        <i className="fa fa-android mr-2 text-purple" />
                       </span>
-                      <span className="nav-link-inner--text ml-1">
+                      <span className="nav-link-inner--text ml-1 text-purple">
                         Download App
                       </span>
                     </Button>

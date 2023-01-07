@@ -56,19 +56,19 @@ class Icons extends React.Component {
             <div className="blur--hover">
               <a href="https://demos.creative-tim.com/argon-design-system-react/#/documentation/icons?ref=adsr-landing-page">
                 <div className="icons-container blur-item mt-5 on-screen">
-                  <i className="icon ni ni-diamond" />
-                  <i className="icon icon-sm ni ni-album-2" />
-                  <i className="icon icon-sm ni ni-app" />
-                  <i className="icon icon-sm ni ni-atom" />
-                  <i className="icon ni ni-bag-17" />
-                  <i className="icon ni ni-bell-55" />
-                  <i className="icon ni ni-credit-card" />
-                  <i className="icon icon-sm ni ni-briefcase-24" />
-                  <i className="icon icon-sm ni ni-building" />
-                  <i className="icon icon-sm ni ni-button-play" />
-                  <i className="icon ni ni-calendar-grid-58" />
-                  <i className="icon ni ni-camera-compact" />
-                  <i className="icon ni ni-chart-bar-32" />
+                  <i className="icon ni ni-diamond text-purple" />
+                  <i className="icon icon-sm ni ni-album-2 text-default" />
+                  <i className="icon icon-sm ni ni-app text-default" />
+                  <i className="icon icon-sm ni ni-atom text-default" />
+                  <i className="icon ni ni-bag-17 text-default" />
+                  <i className="icon ni ni-bell-55 text-default" />
+                  <i className="icon ni ni-credit-card text-default" />
+                  <i className="icon icon-sm ni ni-briefcase-24 text-default" />
+                  <i className="icon icon-sm ni ni-building text-default" />
+                  <i className="icon icon-sm ni ni-button-play text-default" />
+                  <i className="icon ni ni-calendar-grid-58 text-default" />
+                  <i className="icon ni ni-camera-compact text-default" />
+                  <i className="icon ni ni-chart-bar-32 text-default" />
                 </div>
                 <span className="blur-hidden h5 text-success">
                   Eplore all the 21.000+ Nucleo Icons

@@ -36,121 +36,217 @@ class Download extends React.Component {
                   </span>
                 </h2>
                 <p className="lead">
-                  Cause if you do, it can be yours for FREE. Hit the button
-                  below to navigate to Creative Tim where you can find the
-                  Design System in React. Start a new project or give an old
-                  Bootstrap project a new look!
+                  Ready to take your software development career to the next
+                  level? Our startup is looking for experienced developers to
+                  join our fast-paced and innovative team. You'll have the
+                  opportunity to work on challenging projects using the latest
+                  technologies and make a meaningful impact. We offer a
+                  competitive salary, flexible work environment, and
+                  opportunities for professional development and advancement. If
+                  you're excited to be a part of a dynamic startup, apply now!
                 </p>
                 <div className="btn-wrapper">
                   <Button
                     className="mb-3 mb-sm-0"
-                    color="primary"
+                    color="default"
                     href="https://www.creative-tim.com/product/argon-design-system-react?ref=adsr-landing-page"
                   >
-                    Download React
+                    Join Us Now
                   </Button>
                 </div>
+
+                {/* Available Technologies */}
                 <div className="text-center">
                   <h4 className="display-4 mb-5 mt-5">
-                    Available on these technologies
+                    Available on these Technologies
                   </h4>
                   <Row className="justify-content-center">
                     <Col lg="2" xs="4">
-                      <a
-                        href="https://www.creative-tim.com/product/argon-design-system?ref=adsr-landing-page"
-                        id="tooltip255035741"
-                        target="_blank"
-                      >
+                      <a href="https://reactjs.org/" id="react" target="_blank">
                         <img
                           alt="..."
                           className="img-fluid"
-                          src="https://s3.amazonaws.com/creativetim_bucket/tim_static_images/presentation-page/bootstrap.jpg"
+                          src={require("../../../assets/img/technologies/react.png")}
                         />
                       </a>
-                      <UncontrolledTooltip delay={0} target="tooltip255035741">
-                        Bootstrap 4 - Most popular front-end component library
+                      <UncontrolledTooltip delay={0} target="react">
+                        React Js | React Native
                       </UncontrolledTooltip>
                     </Col>
                     <Col lg="2" xs="4">
                       <a
-                        href="https://www.creative-tim.com/product/vue-argon-design-system?ref=adsr-landing-page"
-                        id="tooltip265846671"
+                        href="https://nodejs.org/en/"
+                        id="node"
                         target="_blank"
                       >
                         <img
                           alt="..."
                           className="img-fluid"
-                          src="https://s3.amazonaws.com/creativetim_bucket/tim_static_images/presentation-page/vue.jpg"
+                          src={require("../../../assets/img/technologies/node.png")}
                         />
                       </a>
-                      <UncontrolledTooltip delay={0} target="tooltip265846671">
-                        Vue.js - The progressive javascript framework
+                      <UncontrolledTooltip delay={0} target="node">
+                        Node Js
                       </UncontrolledTooltip>
                     </Col>
                     <Col lg="2" xs="4">
                       <a
-                        href="https://www.creative-tim.com/product/argon-design-system-angular?ref=adsr-landing-page"
-                        id="tooltip233150499"
+                        href="https://aws.amazon.com/"
+                        id="aws"
                         target="_blank"
                       >
                         <img
                           alt="..."
                           className="img-fluid"
-                          src="https://s3.amazonaws.com/creativetim_bucket/tim_static_images/presentation-page/angular.jpg"
+                          src={require("../../../assets/img/technologies/aws.png")}
                         />
                       </a>
-                      <UncontrolledTooltip delay={0} target="tooltip233150499">
-                        Angular - One framework. Mobile & Desktop
+                      <UncontrolledTooltip delay={0} target="aws">
+                        Amazon Web Services
                       </UncontrolledTooltip>
                     </Col>
                     <Col lg="2" xs="4">
                       <a
-                        href="https://www.creative-tim.com/product/argon-design-system-react?ref=adsr-landing-page"
-                        id="tooltip308866163"
+                        href="https://www.docker.com/"
+                        id="docker"
                         target="_blank"
                       >
                         <img
                           alt="..."
                           className="img-fluid"
-                          src="https://s3.amazonaws.com/creativetim_bucket/tim_static_images/presentation-page/react.jpg"
+                          src={require("../../../assets/img/technologies/docker.png")}
                         />
                       </a>
-                      <UncontrolledTooltip delay={0} target="tooltip308866163">
-                        React - A JavaScript library for building user
-                        interfaces
+                      <UncontrolledTooltip delay={0} target="docker">
+                        Docker
                       </UncontrolledTooltip>
                     </Col>
                     <Col lg="2" xs="4">
                       <a
-                        href="https://www.creative-tim.com/product/argon-design-system-react?ref=adsr-landing-page"
-                        id="tooltip76119384"
+                        href="https://tailwindcss.com/"
+                        id="tailwind"
                         target="_blank"
                       >
                         <img
                           alt="..."
                           className="img-fluid"
-                          src="https://s3.amazonaws.com/creativetim_bucket/tim_static_images/presentation-page/sketch.jpg"
+                          src={require("../../../assets/img/technologies/tailwind.png")}
                         />
                       </a>
-                      <UncontrolledTooltip delay={0} target="tooltip76119384">
-                        Sketch - Digital design toolkit
+                      <UncontrolledTooltip delay={0} target="tailwind">
+                        Tailwind CSS
                       </UncontrolledTooltip>
                     </Col>
                     <Col lg="2" xs="4">
                       <a
-                        href="https://www.creative-tim.com/product/argon-design-system-react?ref=adsr-landing-page"
-                        id="tooltip646643508"
+                        href="https://getbootstrap.com/"
+                        id="bootstrap"
                         target="_blank"
                       >
                         <img
                           alt="..."
                           className="img-fluid"
-                          src="https://s3.amazonaws.com/creativetim_bucket/tim_static_images/presentation-page/ps.jpg"
+                          src={require("../../../assets/img/technologies/bootstrap.png")}
                         />
                       </a>
-                      <UncontrolledTooltip delay={0} target="tooltip646643508">
-                        Adobe Photoshop - Software for digital images
-                        manipulation
+                      <UncontrolledTooltip delay={0} target="bootstrap">
+                        Bootstrap
+                      </UncontrolledTooltip>
+                    </Col>
+                    <Col lg="2" xs="4">
+                      <a
+                        href="https://www.javascript.com/"
+                        id="javascript"
+                        target="_blank"
+                      >
+                        <img
+                          alt="..."
+                          className="img-fluid"
+                          src={require("../../../assets/img/technologies/javascript.png")}
+                        />
+                      </a>
+                      <UncontrolledTooltip delay={0} target="javascript">
+                        Javascript
+                      </UncontrolledTooltip>
+                    </Col>
+                    <Col lg="2" xs="4">
+                      <a
+                        href="https://www.postgresql.org/"
+                        id="pgsql"
+                        target="_blank"
+                      >
+                        <img
+                          alt="..."
+                          className="img-fluid"
+                          src={require("../../../assets/img/technologies/postgres.png")}
+                        />
+                      </a>
+                      <UncontrolledTooltip delay={0} target="pgsql">
+                        PostgreSQL
+                      </UncontrolledTooltip>
+                    </Col>
+                    <Col lg="2" xs="4">
+                      <a
+                        href="https://soliditylang.org/"
+                        id="solidity"
+                        target="_blank"
+                      >
+                        <img
+                          alt="..."
+                          className="img-fluid"
+                          src={require("../../../assets/img/technologies/solidity.png")}
+                        />
+                      </a>
+                      <UncontrolledTooltip delay={0} target="solidity">
+                        Solidity
+                      </UncontrolledTooltip>
+                    </Col>
+                    <Col lg="2" xs="4">
+                      <a
+                        href="https://www.adobe.com/"
+                        id="photoshop"
+                        target="_blank"
+                      >
+                        <img
+                          alt="..."
+                          className="img-fluid"
+                          src={require("../../../assets/img/technologies/photoshop.png")}
+                        />
+                      </a>
+                      <UncontrolledTooltip delay={0} target="photoshop">
+                        Adobe Photoshop
+                      </UncontrolledTooltip>
+                    </Col>
+                    <Col lg="2" xs="4">
+                      <a
+                        href="https://www.adobe.com/"
+                        id="aftereffects"
+                        target="_blank"
+                      >
+                        <img
+                          alt="..."
+                          className="img-fluid"
+                          src={require("../../../assets/img/technologies/ae.png")}
+                        />
+                      </a>
+                      <UncontrolledTooltip delay={0} target="aftereffects">
+                        Adobe After Effects
+                      </UncontrolledTooltip>
+                    </Col>
+                    <Col lg="2" xs="4">
+                      <a
+                        href="https://www.blender.org/"
+                        id="blender"
+                        target="_blank"
+                      >
+                        <img
+                          alt="..."
+                          className="img-fluid"
+                          src={require("../../../assets/img/technologies/blender.png")}
+                        />
+                      </a>
+                      <UncontrolledTooltip delay={0} target="blender">
+                        Blender
                       </UncontrolledTooltip>
                     </Col>
                   </Row>

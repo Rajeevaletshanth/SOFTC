@@ -48,6 +48,10 @@ import Download from "./IndexSections/Download.js";
 
 //Container 
 import About from "./containers/About.js";
+import Joinus from "./containers/Joinus.js";
+import Technologies from "./containers/Technologies.js";
+import ThreeSteps from "./containers/ThreeSteps.js";
+import Testimonial from "./containers/Testimonial.js";
 
 class Index extends React.Component {
   componentDidMount() {
@@ -61,25 +65,12 @@ class Index extends React.Component {
         <DemoNavbar />
         <main ref="main">
           <Hero />
+          <ThreeSteps />
           <About />
-          <div className="py-5 bg-secondary">
-            <Container>
-              <h3>Our Products</h3>
-              <Row>
-                <Col style={{ minHeight: "350px" }}>
-                  {/* <img
-                      alt="about us"
-                      className="img-fluid rounded"
-                      src={require("../../assets/img/contents/about us 2.jpg")}
-                      style={{ minWidth: "100%", minHeight: "100%" }}
-                    /> */}
-                </Col>
-              </Row>
-            </Container>
-          </div>
-          {/* <Carousel /> */}
-          {/* <Buttons /> */}
-          {/* <Inputs /> */}
+          <Testimonial />
+          <Joinus />
+          <Technologies />
+
          {/*  <Navbars />
           <section className="section section-components">
             <Container>

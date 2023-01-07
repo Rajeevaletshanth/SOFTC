@@ -49,15 +49,17 @@ const Hero = () => {
           <Container className="shape-container d-flex align-items-center py-lg">
             <div className="col px-0">
               <Row className="align-items-center justify-content-center">
-                <Col className="text-center" lg="8">
+                <Col className="text-center " lg="12">
+
                   <img
                     alt="SOFTC Logo"
                     className="img-fluid"
                     // src={require("assets/img/brand/argon-react-white.png")}
                     src={require("assets/img/softc_logos/logo-white.png")}
-                    style={{ width: "400px" }}
+                    style={{ width: "500px" }}
                   />
-                  <p className="lead text-white">
+                  <p className="lead text-light transparent-background px-2 py-2">
+                    {/* DEVELOPMENT | SOLUTIONS | DESIGNS */}
                     At SOFTC, we envision a world where technology empowers individuals and businesses to unlock their full potential and achieve greatness. Our software serves as the catalyst for this transformation, driving innovation and enabling our clients to reach new heights.
                     {/* We don't want to showcase our competence. Despite the fact that we are a small developers team, we will definitely astonish you. */}
                   </p>
@@ -73,9 +75,9 @@ const Hero = () => {
                         download="softc-android-app"
                       >
                         <span className="btn-inner--icon">
-                          <i className="fa fa-android mr-2" />
+                          <i className="fa fa-android mr-2 text-purple" />
                         </span>
-                        <span className="nav-link-inner--text ml-1">
+                        <span className="nav-link-inner--text ml-1 text-purple">
                           Download App                        
                         </span>
                       </Button>
