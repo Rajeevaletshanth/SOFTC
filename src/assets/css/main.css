@@ -20,3 +20,27 @@
        -moz-box-shadow: 0px 0px 1px #7d00d1;
             box-shadow: 0px 0px 1px #7d00d1; */
 }
+
+.support-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+}
+
+.choose-us-button {
+    background: radial-gradient(#7300f7, #5700bb);
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    /* box-shadow: 0px 0px 0px rgba(0, 0, 0, 1); */
+    
+  }
+  
+.choose-us-button:hover {
+    transform: scale(1.1) rotate(10deg);
+    -webkit-box-shadow: 0px 0px 50px #ac82db;
+       -moz-box-shadow: 0px 0px 50px #ac82db;
+            box-shadow: 0px 0px 50px #ac82db;
+    /* box-shadow: 0px 0px 10px rgba(248, 54, 28, 0.952); */
+}

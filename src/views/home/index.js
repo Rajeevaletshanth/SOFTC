@@ -18,7 +18,8 @@
 import React from "react";
 
 // reactstrap components
-import { Container, Row, Col } from "reactstrap";
+import { Container, Row, Col, Button } from "reactstrap";
+import "../../assets/css/main.css";
 
 // core components
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
@@ -52,6 +53,8 @@ import Joinus from "./containers/Joinus.js";
 import Technologies from "./containers/Technologies.js";
 import ThreeSteps from "./containers/ThreeSteps.js";
 import Testimonial from "./containers/Testimonial.js";
+import ChatBot from "./containers/ChatBot.js";
+import Steppers from "./containers/Steppers";
 
 class Index extends React.Component {
   componentDidMount() {
@@ -63,13 +66,23 @@ class Index extends React.Component {
     return (
       <>
         <DemoNavbar />
+        
         <main ref="main">
           <Hero />
           <ThreeSteps />
           <About />
+          {/* <Steppers /> */}
           <Testimonial />
           <Joinus />
           <Technologies />
+          
+        {/* <Button
+                  className="btn-icon-only rounded-circle ml-1"
+                  color="facebook"
+                  href={`${socialMediaLink.facebook}`}
+                  id="tooltip837440414"
+                  target="_blank"
+                ></Button> */}
 
          {/*  <Navbars />
           <section className="section section-components">
@@ -95,7 +108,9 @@ class Index extends React.Component {
           <Login />
           <Download /> */}
         </main>
+        
         <CardsFooter />
+        <ChatBot />
       </>
     );
   }
