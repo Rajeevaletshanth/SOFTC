@@ -40,7 +40,6 @@ const ChatBot = () => {
   });
 
   const getResponse = () => {
-    console.log(process.env.REACT_APP_OPENAI_SECRET)
     if (!payload.prompt) {
         setPayLoad({
             ...payload,
