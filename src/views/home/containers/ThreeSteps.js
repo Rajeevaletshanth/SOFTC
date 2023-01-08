@@ -39,9 +39,9 @@ class ThreeSteps extends React.Component {
               <Col className="text-center" lg="12">
                 {/* Tabs with icons */}
                 <div className="">
-                  <small className="text-uppercase font-weight-bold">
-                    <span className="text-warning mr-1">Learn more</span> more
-                    about SOFTC unique features
+                  <small className=" font-weight-bold">
+                    <a href="#learnmore"><span className="text-warning mr-1">Learn more</span></a> more
+                    about SOFTC's unique features
                   </small>
                 </div>
                 <div className="display-3 mb-3">
