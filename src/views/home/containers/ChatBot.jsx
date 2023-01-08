@@ -57,11 +57,13 @@ const ChatBot = () => {
         }
       })
         .then((res) => {
-          console.log(res);
+          setPayLoad({
+            ...payload,
+            prompt: "",
+          });
           responseHandler(res);
         })
         .catch((err) => {
-          console.log(err)
           setLoading(false);
         });
     }
