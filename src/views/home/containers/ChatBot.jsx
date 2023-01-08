@@ -18,7 +18,6 @@ import {
 
 import { BsFillChatDotsFill } from "react-icons/bs";
 
-const OPENAI_API_KEY = "Bearer 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";
 
 const ChatBot = () => {
   const [modal, setModal] = useState(false);
@@ -41,6 +40,7 @@ const ChatBot = () => {
   });
 
   const getResponse = () => {
+    console.log(process.env.REACT_APP_OPENAI_SECRET)
     if (!payload.prompt) {
         setPayLoad({
             ...payload,
@@ -54,8 +54,8 @@ const ChatBot = () => {
         data: payload,
         headers: {
           "Content-Type": "application/json",
-          Authorization: OPENAI_API_KEY
-        },
+          Authorization: `Bearer ${process.env.REACT_APP_OPENAI_SECRET}`,
+        }
       })
         .then((res) => {
           console.log(res);

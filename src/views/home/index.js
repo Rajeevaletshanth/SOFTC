@@ -53,7 +53,7 @@ import Joinus from "./containers/Joinus.js";
 import Technologies from "./containers/Technologies.js";
 import ThreeSteps from "./containers/ThreeSteps.js";
 import Testimonial from "./containers/Testimonial.js";
-import ChatBot from "./containers/ChatBot.js";
+import ChatBot from "./containers/ChatBot.jsx";
 import Steppers from "./containers/Steppers";
 
 class Index extends React.Component {
