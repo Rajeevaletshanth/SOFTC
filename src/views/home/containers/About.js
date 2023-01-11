@@ -1,81 +1,110 @@
+/*!
+
+=========================================================
+* BLK Design System React - v1.2.1
+=========================================================
+
+* Product Page: https://www.creative-tim.com/product/blk-design-system-react
+* Copyright 2022 Creative Tim (https://www.creative-tim.com)
+* Licensed under MIT (https://github.com/creativetimofficial/blk-design-system-react/blob/main/LICENSE.md)
+
+* Coded by Creative Tim
+
+=========================================================
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+*/
 import React from "react";
+import classnames from "classnames";
+// react plugin used to create datetimepicker
+import ReactDatetime from "react-datetime";
 
 // reactstrap components
-import { Button, Container, Row, Col, CardImg, Card } from "reactstrap";
-import "../../../assets/css/main.css";
+import {
+  Button,
+  FormGroup,
+  Container,
+  Row,
+  Col,
+  UncontrolledTooltip,
+  UncontrolledPopover,
+  PopoverBody,
+  PopoverHeader,
+  Modal,
+  Form,
+  Input,
+  InputGroup,
+  InputGroupAddon,
+  InputGroupText,
+  Label,
+  UncontrolledCarousel,
+} from "reactstrap";
 
-const About = () => {
+const carouselItems = [
+  {
+    src: require("../../../assets/img/contents/technology.jpg"),
+    altText: "Slide 1",
+    caption: "",
+  },
+  {
+    src: require("../../../assets/img/contents/programming.jpg"),
+    altText: "Slide 2",
+    caption: "",
+  },
+  {
+    src: require("../../../assets/img/contents/design.jpg"),
+    altText: "Slide 3",
+    caption: "",
+  },
+];
+
+export default function JavaScript() {
+  const [demoModal, setDemoModal] = React.useState(false);
+  const [miniModal, setMiniModal] = React.useState(false);
+  const [formModal, setFormModal] = React.useState(false);
+  const [emailFocus, setEmailFocus] = React.useState(false);
+  const [passwordFocus, setPasswordFocus] = React.useState(false);
   return (
-    <>
-      <div className=" bg-secondary">
+    <div className=" section-secondary" >
+      <div className="section">
         <Container>
-          <section
-            className="section section-components pb-0"
-            id="section-components"
-          >
-            <Container>
-              <Row className="justify-content-center">
-                <Col lg="12">
-                  <h2 className="display-3  mb-5 text-center">
-                    Meet the Team
-                    <span className="text-warning display-4">
-                      <b>About Us</b>
-                    </span>
-                  </h2>
-                  
-                  <Container className="mb-5">
-                    <Row>
-                      <Col style={{ minWidth: "50px" }} lg="7">
-                        <Card className="card-lift--hover shadow border-0">
-                          <img
-                            alt="..."
-                            className="img-fluid rounded shadow"
-                            src={require("../../../assets/img/contents/about us.png")}
-                            // style={{ minWidth: "100%", minHeight: "100%" }}
-                          />
-                        </Card>
-                      </Col>
-                      <Col
-                        className="mt-sm-0"
-                        style={{ minHeight: "350px" }}
-                        lg="5"
-                      >
-                        <p className="text-center">
-                          Our software solution and graphics design company
-                          specializes in creating custom software applications
-                          and eye-catching graphics for businesses of all sizes.
-                          From website design and user experience optimization
-                          to branding and marketing materials, we have the
-                          skills and expertise to help our clients stand out in
-                          their industry. We work closely with each client to
-                          understand their unique needs and goals, and provide
-                          personalized solutions to help them achieve success.
-                          Whether you need a cloud-based system or an on-premise
-                          solution, our team is ready to deliver top-quality
-                          results.
-                          {/* We offer a range of services including web development,
-                      mobile app development, decentralized app development, and
-                      graphic design. Our team is dedicated to delivering
-                      high-quality products that meet the needs of our clients.
-                      We take pride in turning complex ideas into functional,
-                      user-friendly solutions. Our process starts with
-                      understanding your business objectives and continues
-                      through the entire development lifecycle. We strive to
-                      provide customized solutions and ongoing support to ensure
-                      the success of your project. Thank you for considering us.
-                      We look forward to working with you. */}
-                        </p>
-                      </Col>
-                    </Row>
-                  </Container>
-                </Col>
-              </Row>
-            </Container>
-          </section>
+          {/* <div className="title">
+            <h3>Meet the Team</h3>
+          </div> */}
+          <Row className="justify-content-between align-items-center">
+            <Col className="mb-2 mb-lg-0" lg="5">
+              <h2 className="font-weight-light"><b>About Us</b></h2>
+              <p className="mt-4">
+                Our software solution and graphics design company specializes in
+                creating custom software applications and eye-catching graphics
+                for businesses of all sizes. From website design and user
+                experience optimization to branding and marketing materials, we
+                have the skills and expertise to help our clients stand out in
+                their industry. We work closely with each client to understand
+                their unique needs and goals, and provide personalized solutions
+                to help them achieve success. Whether you need a cloud-based
+                system or an on-premise solution, our team is ready to deliver
+                top-quality results.
+              </p>
+              <Button
+                className="mt-4"
+                color="warning"
+                href="https://demos.creative-tim.com/blk-design-system-react/#/documentation/alert"
+              >
+                Our Team
+              </Button>
+            </Col>
+            <Col lg="6">
+              <UncontrolledCarousel
+                items={carouselItems}
+                indicators={false}
+                autoPlay={false}
+              />
+            </Col>
+          </Row>
         </Container>
       </div>
-    </>
+    </div>
   );
-};
-
-export default About;
+}

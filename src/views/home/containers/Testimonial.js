@@ -51,7 +51,7 @@ const Testimonial = () => {
                       <div className="row text-center">
                         <Col className="mt-2" md={4} lg={4}>
                           <Button
-                            className="rounded-circle text-white choose-us-button p-5"
+                            className="rounded-circle  choose-us-button p-5"
                             size="lg"
                           >
                             <FaBrain size={35}/>
@@ -61,7 +61,7 @@ const Testimonial = () => {
                         </Col>
                         <Col className="mt-2" md={4} lg={4}>
                           <Button
-                            className="rounded-circle text-white choose-us-button p-5"
+                            className="rounded-circle  choose-us-button p-5"
                             size="lg"
                           >
                             <RiCustomerService2Line size={35}/>
@@ -71,7 +71,7 @@ const Testimonial = () => {
                         </Col>
                         <Col className="mt-2" md={4} lg={4}>
                           <Button
-                            className="rounded-circle text-white choose-us-button p-5"
+                            className="rounded-circle  choose-us-button p-5"
                             size="lg"
                           >
                             <BsCashCoin size={35}/>

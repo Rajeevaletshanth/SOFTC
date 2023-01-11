@@ -79,8 +79,8 @@ const ReactParticles = () => {
                       "area": 400,
                       "factor": 800
                     },
-                    "limit": 60,
-                    "value": 50
+                    "limit": 30,
+                    "value": 20
                 },
                 "detectRetina": true,
             },

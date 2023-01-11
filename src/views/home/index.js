@@ -54,6 +54,7 @@ import Technologies from "./containers/Technologies.js";
 import ThreeSteps from "./containers/ThreeSteps.js";
 import Testimonial from "./containers/Testimonial.js";
 import ChatBot from "./containers/ChatBot.jsx";
+import ImageBot from "./containers/ImageBot";
 import Steppers from "./containers/Steppers";
 
 class Index extends React.Component {
@@ -62,7 +63,9 @@ class Index extends React.Component {
     document.scrollingElement.scrollTop = 0;
     this.refs.main.scrollTop = 0;
   }
+  
   render() {
+
     return (
       <>
         <DemoNavbar />
@@ -110,6 +113,7 @@ class Index extends React.Component {
         </main>
         
         <CardsFooter />
+        <ImageBot />
         <ChatBot />
       </>
     );

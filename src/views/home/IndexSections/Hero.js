@@ -46,27 +46,25 @@ const Hero = () => {
             <span className="span-50" />
             <span className="span-100" />
           </div>
-          <Container className="shape-container d-flex align-items-center py-lg">
+          <Container className="shape-container d-flex align-items-center pt-lg">
             <div className="col px-0">
               <Row className="align-items-center justify-content-center">
-                <Col className="text-center " lg="12">
+                <Col className="text-center " lg="8">
 
                   <img
                     alt="SOFTC Logo"
                     className="img-fluid"
                     // src={require("assets/img/brand/argon-react-white.png")}
                     src={require("assets/img/softc_logos/logo-white.png")}
-                    style={{ width: "500px" }}
+                    style={{ width: "330px" }}
                   />
-                  <p className="lead text-light transparent-background px-2 py-2">
-                    {/* DEVELOPMENT | SOLUTIONS | DESIGNS */}
-                    At SOFTC, we envision a world where technology empowers individuals and businesses to unlock their full potential and achieve greatness. Our software serves as the catalyst for this transformation, driving innovation and enabling our clients to reach new heights.
-                    {/* We don't want to showcase our competence. Despite the fact that we are a small developers team, we will definitely astonish you. */}
+                  <p className="lead text-light  px-2 pt-2" style={{fontSize:"16px"}}>
+                    {/* Unlock the potential of your business with our cutting-edge software technology */}
+                    Experience our innovative software solutions to elevate your business to the next level.
                   </p>
                   
                 
-                  <div className="btn-wrapper mt-5">
-                      {/* <VideoModal name="Watch Intro" btnType="white"/> */}
+                  {/* <div className="btn-wrapper mt-5">
                       <Button
                         className="btn-neutral btn-icon"
                         size="lg"
@@ -96,7 +94,7 @@ const Hero = () => {
                           on Github
                         </span>
                       </Button>
-                    </div>
+                    </div> */}
 
                   {/* <div className="mt-5">
                       <small className="text-white font-weight-bold mb-0 mr-2">

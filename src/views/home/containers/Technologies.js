@@ -76,24 +76,24 @@ const techArr = [
     src: require("../../../assets/img/technologies/solidity.png"),
     tooltip: "Solidity",
   },
-  {
-    id: "photoshop",
-    href: "https://www.adobe.com/",
-    src: require("../../../assets/img/technologies/photoshop.png"),
-    tooltip: "Adobe Photoshop",
-  },
-  {
-    id: "ae",
-    href: "https://www.adobe.com/",
-    src: require("../../../assets/img/technologies/ae.png"),
-    tooltip: "Adobe After Effects",
-  },
-  {
-    id: "blender",
-    href: "https://www.blender.org/",
-    src: require("../../../assets/img/technologies/blender.png"),
-    tooltip: "Blender",
-  },
+  // {
+  //   id: "photoshop",
+  //   href: "https://www.adobe.com/",
+  //   src: require("../../../assets/img/technologies/photoshop.png"),
+  //   tooltip: "Adobe Photoshop",
+  // },
+  // {
+  //   id: "ae",
+  //   href: "https://www.adobe.com/",
+  //   src: require("../../../assets/img/technologies/ae.png"),
+  //   tooltip: "Adobe After Effects",
+  // },
+  // {
+  //   id: "blender",
+  //   href: "https://www.blender.org/",
+  //   src: require("../../../assets/img/technologies/blender.png"),
+  //   tooltip: "Blender",
+  // },
 ];
 
 class Technologies extends React.Component {
@@ -103,7 +103,7 @@ class Technologies extends React.Component {
         <section className="section">
           <Container>
             <Row className="row-grid justify-content-center">
-              <Col className="text-center" lg="8">
+              <Col className="text-center" lg="10">
                 {/* Available Technologies */}
                 <div className="text-center">
                   <h4 className="display-4 mb-5 mt-5">

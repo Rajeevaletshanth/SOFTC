@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import axios from "axios";
 import {
   Button,
@@ -15,29 +15,45 @@ import {
   ListGroup,
   ListGroupItem,
 } from "reactstrap";
-
+import '../../../assets/css/main.css'
 import { BsFillChatDotsFill } from "react-icons/bs";
+
+const general_Ai = {
+  prompt: "",
+  temperature: 0.1,
+  max_tokens: 100,
+  top_p: 1,
+  frequency_penalty: 0.0,
+  presence_penalty: 0.6,
+  stop: [" Human:", " AI:"],
+  model: "text-davinci-003",
+  // n: 1,
+}
+
+const sarcatic_Ai = {
+  model:"text-davinci-003",
+  prompt:"Marv is a chatbot that reluctantly answers questions with sarcastic responses.",
+  temperature:0.5,
+  max_tokens:60,
+  top_p:0.3,
+  frequency_penalty:0.5,
+  presence_penalty:0.0
+}
 
 
 const ChatBot = () => {
+
   const [modal, setModal] = useState(false);
 
   const toggle = () => setModal(!modal);
 
   const [loading, setLoading] = useState(false);
   let [obj, setObj] = useState({ choices: [] });
+  const [messages, setMessages] = useState([]);
+  const [scrollPosition, setScrollPosition] = useState(1000);
 
-  const [payload, setPayLoad] = useState({
-    prompt: "",
-    temperature: 0.1,
-    max_tokens: 100,
-    top_p: 1,
-    frequency_penalty: 0.0,
-    presence_penalty: 0.6,
-    stop: [" Human:", " AI:"],
-    model: "text-davinci-003",
-    // n: 1,
-  });
+  const [payload, setPayLoad] = useState(general_Ai);
+  const scrollRef = useRef(null);
 
   const getResponse = () => {
     if (!payload.prompt) {
@@ -46,6 +62,15 @@ const ChatBot = () => {
             prompt: "Start the conversation with the SOFTC AI assistant",
         });
     } else {
+      setScrollPosition(scrollPosition + 100);
+      setMessages(s => {
+        return[
+          ...s,{
+            user: "User",
+            message: payload.prompt
+          }
+        ]
+      })
       setLoading(true);
       axios({
         method: "POST",
@@ -57,6 +82,15 @@ const ChatBot = () => {
         }
       })
         .then((res) => {
+          setScrollPosition(scrollPosition + 100);
+          setMessages(s => {
+            return[
+              ...s,{
+                user: "Assistant",
+                message: res.data.choices[0].text
+              }
+            ]
+          })
           setPayLoad({
             ...payload,
             prompt: "",
@@ -71,6 +105,7 @@ const ChatBot = () => {
 
   const responseHandler = (res) => {
     if (res.status === 200) {
+      console.log(messages)
       setObj(res.data);
       setLoading(false);
     }
@@ -89,9 +124,42 @@ const ChatBot = () => {
         <ModalHeader toggle={toggle} className="bg-warning ">
           <b className=" text-white">SOFTC Assistant </b> <text className="text-white" style={{fontSize:"13px"}}>(Beta)</text>
         </ModalHeader>
+        
+        <ModalBody>
+          <Container>
+            <Row>
+              <Col xs={12}  ref={scrollRef} style={{ minHeight: "300px",maxHeight: "300px", overflow: "auto", scrollTop: scrollPosition }}>
+                <ListGroup>
+                    {messages?.map((item, i) => (
+                      <ListGroupItem className="border-1 mb-2">
+                        <div className="d-flex w-100 justify-content-between">
+                          <h6 className="mb-1">{item.message}</h6>
+                        </div>
+                      </ListGroupItem>
+                    ))}
+                </ListGroup>
+              </Col>
+            </Row>
+          </Container>
+          {loading && <Row className="bg-secondary rounded rounded-lg d-flex justify-content-center px-2" style={{width:"110px"}}>
+            Typing 
+            <div className="row ml-1 mt-2 pr-2">
+            <div class="d-flex justify-content-center text-xs">
+              <div class="spinner-grow" role="status" style={{width:".50rem",height:".50rem"}}> </div>
+            </div>
+            <div class="d-flex justify-content-center text-xs">
+              <div class="spinner-grow" role="status" style={{width:".50rem",height:".50rem"}}> </div>
+            </div>
+            <div class="d-flex justify-content-center text-xs">
+              <div class="spinner-grow" role="status" style={{width:".50rem",height:".50rem"}}> </div>
+            </div>
+            </div>
+          </Row>}
+        </ModalBody>
+        
         <ModalFooter>
           <Input
-            type="textarea"
+            type="text"
             name="text"
             id="text"
             placeholder="Ask anything"
@@ -112,27 +180,6 @@ const ChatBot = () => {
             {loading ? "Loading... " : "Ask"}
           </Button>
         </ModalFooter>
-        <ModalBody>
-          <Container>
-            <Row>
-              <Col xs={12} style={{ minHeight: "300px" }}>
-                <ListGroup>
-                  {loading ? (
-                    <span>loading...</span>
-                  ) : (
-                    obj?.choices?.map((v, i) => (
-                      <ListGroupItem className="border-1">
-                        <div className="d-flex w-100 justify-content-between">
-                          <h6 className="mb-1">{v.text}</h6>
-                        </div>
-                      </ListGroupItem>
-                    ))
-                  )}
-                </ListGroup>
-              </Col>
-            </Row>
-          </Container>
-        </ModalBody>
       </Modal>
     </div>
   );
