@@ -123,7 +123,7 @@ const ImageBot = () => {
                     obj?.data?.map((v, i) => (
                       <ListGroupItem className="border-1">
                         <div className="d-flex w-100 justify-content-between">
-                          {v.url && <img src={v.url} alt="" width={250} height={250}/>}
+                          {v.url && <img src={v.url} alt="" width={350} height={350}/>}
                           {/* <h6 className="mb-1">{v.url}</h6> */}
                         </div>
                       </ListGroupItem>

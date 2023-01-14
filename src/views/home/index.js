@@ -55,7 +55,6 @@ import ThreeSteps from "./containers/ThreeSteps.js";
 import Testimonial from "./containers/Testimonial.js";
 import ChatBot from "./containers/ChatBot.jsx";
 import ImageBot from "./containers/ImageBot";
-import Steppers from "./containers/Steppers";
 
 class Index extends React.Component {
   componentDidMount() {
@@ -74,7 +73,6 @@ class Index extends React.Component {
           <Hero />
           <ThreeSteps />
           <About />
-          {/* <Steppers /> */}
           <Testimonial />
           <Joinus />
           <Technologies />
@@ -113,7 +111,7 @@ class Index extends React.Component {
         </main>
         
         <CardsFooter />
-        <ImageBot />
+        {/* <ImageBot /> */}
         <ChatBot />
       </>
     );

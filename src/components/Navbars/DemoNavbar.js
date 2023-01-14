@@ -244,7 +244,7 @@ class DemoNavbar extends React.Component {
                     </UncontrolledTooltip>
                   </NavItem>
                   <NavItem className="d-none d-lg-block ml-lg-4">
-                    <Button
+                    {/* <Button
                       className="btn-neutral btn-icon"
                       color="default"
                       href={require("../../assets/app/softc-mobile-app.apk")} 
@@ -255,6 +255,32 @@ class DemoNavbar extends React.Component {
                       </span>
                       <span className="nav-link-inner--text ml-1 text-purple">
                         Download App
+                      </span>
+                    </Button> */}
+                    <Button
+                      className="btn-neutral btn-icon"
+                      color="default"
+                      // href={require("../../assets/app/softc-mobile-app.apk")} 
+                      href="/login"
+                    >
+                      <span className="btn-inner--icon">
+                        <i className="fa fa-sign-in mr-2 text-dark" />
+                      </span>
+                      <span className="nav-link-inner--text ml-1 text-dark">
+                        Login
+                      </span>
+                    </Button>
+                    <Button
+                      className="btn-default btn-icon bg-purple"
+                      // color="primary"
+                      // href={require("../../assets/app/softc-mobile-app.apk")} 
+                      href="/register"
+                    >
+                      <span className="btn-inner--icon">
+                        <i className="fa fa-check mr-2 text-white" />
+                      </span>
+                      <span className="nav-link-inner--text ml-1 text-white">
+                        Register
                       </span>
                     </Button>
                   </NavItem>

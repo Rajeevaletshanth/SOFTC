@@ -17,14 +17,15 @@ import {
 } from "reactstrap";
 import '../../../assets/css/main.css'
 import { BsFillChatDotsFill } from "react-icons/bs";
+import { event } from "jquery";
 
 const general_Ai = {
   prompt: "",
-  temperature: 0.1,
+  temperature: 0.5,
   max_tokens: 100,
-  top_p: 1,
-  frequency_penalty: 0.0,
-  presence_penalty: 0.6,
+  top_p: 0.3,
+  frequency_penalty: 0.5,
+  presence_penalty: 0.0,
   stop: [" Human:", " AI:"],
   model: "text-davinci-003",
   // n: 1,
@@ -59,7 +60,7 @@ const ChatBot = () => {
     if (!payload.prompt) {
         setPayLoad({
             ...payload,
-            prompt: "Start the conversation with the SOFTC AI assistant",
+            prompt: "",
         });
     } else {
       setScrollPosition(scrollPosition + 100);
@@ -131,9 +132,9 @@ const ChatBot = () => {
               <Col xs={12}  ref={scrollRef} style={{ minHeight: "300px",maxHeight: "300px", overflow: "auto", scrollTop: scrollPosition }}>
                 <ListGroup>
                     {messages?.map((item, i) => (
-                      <ListGroupItem className="border-1 mb-2">
-                        <div className="d-flex w-100 justify-content-between">
-                          <h6 className="mb-1">{item.message}</h6>
+                      <ListGroupItem className="border-0 mb-0">
+                        <div className={item.user==="Assistant"? "float-left":"float-right"} style={{maxWidth:"300px"}}>
+                          <h6 className="mb-1 py-1 px-3 rounded " style={{backgroundColor: item.user==="Assistant"? "#f4f5f7" : "#ff4c2340"}}>{item.message}</h6>
                         </div>
                       </ListGroupItem>
                     ))}
