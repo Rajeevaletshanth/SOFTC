@@ -26,9 +26,10 @@ import "assets/scss/argon-design-system-react.scss?v1.1.0";
 // import Index from "views/Index.js";
 // import Login from "views/examples/Login.js";
 // import Register from "views/examples/Register.js";
-import Landing from "views/examples/Landing.js";
+// import Landing from "views/examples/Landing.js";
 import Profile from "views/examples/Profile.js";
 import Register from "views/home/auth/Register";
+import Landing from "views/joinus/Landing";
 
 
 import Index from "views/home";
@@ -51,6 +52,11 @@ root.render(
         path="/register"
         exact
         render={(props) => <Register {...props} />}
+      />
+      <Route
+        path="/joinus"
+        exact
+        render={(props) => <Landing {...props} />}
       />
       {/* <Route
         path="/landing-page"

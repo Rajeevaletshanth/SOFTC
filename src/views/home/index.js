@@ -55,6 +55,8 @@ import ThreeSteps from "./containers/ThreeSteps.js";
 import Testimonial from "./containers/Testimonial.js";
 import ChatBot from "./containers/ChatBot.jsx";
 import ImageBot from "./containers/ImageBot";
+import WorkWithUs from "./containers/WorkWithUs";
+
 
 class Index extends React.Component {
   componentDidMount() {
@@ -74,8 +76,11 @@ class Index extends React.Component {
           <ThreeSteps />
           <About />
           <Testimonial />
-          <Joinus />
+          
+          
           <Technologies />
+          <WorkWithUs />
+          <Joinus />
           
         {/* <Button
                   className="btn-icon-only rounded-circle ml-1"

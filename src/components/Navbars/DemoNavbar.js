@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import socialMediaLink from "../../configs/socialmedia.json"
+import socialMediaLink from "../../configs/socialmedia.json";
 import Headroom from "headroom.js";
 // reactstrap components
 import {
@@ -19,29 +19,72 @@ import {
   Container,
   Row,
   Col,
-  UncontrolledTooltip
+  UncontrolledTooltip,
+  Modal
 } from "reactstrap";
 
 
+const socialMedias = [
+  {
+    href: socialMediaLink.facebook,
+    name: "Facebook",
+    icon: "fa fa-facebook-square",
+    tooltip: "Follow Us on Facebook"
+  },
+  {
+    href: socialMediaLink.linkedin,
+    name: "LinkedIn",
+    icon: "fa fa-linkedin-square",
+    tooltip: "Follow Us on LinkedIn"
+  },
+  {
+    href: socialMediaLink.whatsapp,
+    name: "Whatsapp",
+    icon: "fa fa-whatsapp",
+    tooltip: "Contact Us on Whatsapp"
+  }
+]
+
+
 class DemoNavbar extends React.Component {
+  state = {
+    collapseClasses: "",
+    collapseOpen: false,
+    user: ""
+  };
+
+  toggleModal = (state) => {
+    this.setState({
+      [state]: !this.state[state]
+    });
+  };
+
   componentDidMount() {
     let headroom = new Headroom(document.getElementById("navbar-main"));
     headroom.init();
+
+    if (localStorage.getItem("user-info")) {
+      this.setState({
+        user: JSON.parse(localStorage.getItem("user-info")).username,
+      });
+    }
   }
-  state = {
-    collapseClasses: "",
-    collapseOpen: false
-  };
+
+  logout = () => {
+    localStorage.removeItem("user-info");
+    localStorage.removeItem("token");
+    this.setState({user:""})
+  }
 
   onExiting = () => {
     this.setState({
-      collapseClasses: "collapsing-out"
+      collapseClasses: "collapsing-out",
     });
   };
 
   onExited = () => {
     this.setState({
-      collapseClasses: ""
+      collapseClasses: "",
     });
   };
 
@@ -101,7 +144,7 @@ class DemoNavbar extends React.Component {
                         <Media
                           className="d-flex align-items-center"
                           href="#"
-                          target="_blank"
+                          // target="_blank"
                         >
                           <div className="icon icon-shape bg-gradient-primary rounded-circle text-white">
                             <i className="ni ni-spaceship" />
@@ -111,46 +154,47 @@ class DemoNavbar extends React.Component {
                               Software Solution
                             </h6>
                             <p className="description d-none d-md-inline-block mb-0">
-                              The digitalization of our clients' businesses is our primary business goal.
+                              The digitalization of our clients' businesses is
+                              our primary business goal.
                             </p>
                           </Media>
                         </Media>
                         <Media
                           className="d-flex align-items-center"
                           href="#"
-                          target="_blank"
+                          // target="_blank"
                         >
                           <div className="icon icon-shape bg-gradient-success rounded-circle text-white">
-                            <i className="ni ni-palette" />
-                          </div>
-                          <Media body className="ml-3">
-                            <h6 className="heading text-primary mb-md-1">
-                              Foundation
-                            </h6>
-                            <p className="description d-none d-md-inline-block mb-0">
-                              Learn more about colors, typography, icons and the
-                              grid system we used for Argon.
-                            </p>
-                          </Media>
-                        </Media>
-                        <Media
-                          className="d-flex align-items-center"
-                          href="#"
-                          target="_blank"
-                        >
-                          <div className="icon icon-shape bg-gradient-warning rounded-circle text-white">
                             <i className="ni ni-ui-04" />
                           </div>
                           <Media body className="ml-3">
-                            <h5 className="heading text-warning mb-md-1">
-                              Components
-                            </h5>
+                            <h6 className="heading text-primary mb-md-1">
+                              IT Consulting Services
+                            </h6>
                             <p className="description d-none d-md-inline-block mb-0">
-                              Browse our 50 beautiful handcrafted components
-                              offered in the Free version.
+                              Expert guidance and solutions for companies to optimize their technology systems.
                             </p>
                           </Media>
                         </Media>
+                        <Media
+                          className="d-flex align-items-center"
+                          href="#"
+                          // target="_blank"
+                        >
+                          <div className="icon icon-shape bg-gradient-warning rounded-circle text-white">
+                            <i className="ni ni-palette" />
+                          </div>
+                          <Media body className="ml-3">
+                            <h5 className="heading text-warning mb-md-1">
+                              Graphics and designs
+                            </h5>
+                            <p className="description d-none d-md-inline-block mb-0">
+                            Additional services for graphics and designs include branding, advertising, illustration, and animation
+                            </p>
+                          </Media>
+                        </Media>
+                        
+                        
                       </div>
                     </DropdownMenu>
                   </UncontrolledDropdown>
@@ -179,70 +223,27 @@ class DemoNavbar extends React.Component {
                   </UncontrolledDropdown>
                 </Nav>
                 <Nav className="align-items-lg-center ml-lg-auto" navbar>
-                  <NavItem>
-                    <NavLink
-                      className="nav-link-icon"
-                      href={`${socialMediaLink.facebook}`}
-                      id="tooltip333589074"
-                      target="_blank"
-                    >
-                      <i className="fa fa-facebook-square" />
-                      <span className="nav-link-inner--text d-lg-none ml-2">
-                        Facebook
-                      </span>
-                    </NavLink>
-                    <UncontrolledTooltip delay={0} target="tooltip333589074">
-                      Like us on Facebook
-                    </UncontrolledTooltip>
-                  </NavItem>
-                  <NavItem>
-                    <NavLink
-                      className="nav-link-icon"
-                      href={`${socialMediaLink.instagram}`}
-                      id="tooltip356693867"
-                      target="_blank"
-                    >
-                      <i className="fa fa-instagram" />
-                      <span className="nav-link-inner--text d-lg-none ml-2">
-                        Instagram
-                      </span>
-                    </NavLink>
-                    <UncontrolledTooltip delay={0} target="tooltip356693867">
-                      Follow us on Instagram
-                    </UncontrolledTooltip>
-                  </NavItem>
-                  <NavItem>
-                    <NavLink
-                      className="nav-link-icon"
-                      href={`${socialMediaLink.twitter}`}
-                      id="tooltip184698705"
-                      target="_blank"
-                    >
-                      <i className="fa fa-twitter-square" />
-                      <span className="nav-link-inner--text d-lg-none ml-2">
-                        Twitter
-                      </span>
-                    </NavLink>
-                    <UncontrolledTooltip delay={0} target="tooltip184698705">
-                      Follow us on Twitter
-                    </UncontrolledTooltip>
-                  </NavItem>
-                  <NavItem>
-                    <NavLink
-                      className="nav-link-icon"
-                      href={`${socialMediaLink.github}`}
-                      id="tooltip112445449"
-                      target="_blank"
-                    >
-                      <i className="fa fa-github" />
-                      <span className="nav-link-inner--text d-lg-none ml-2">
-                        Github
-                      </span>
-                    </NavLink>
-                    <UncontrolledTooltip delay={0} target="tooltip112445449">
-                      Star us on Github
-                    </UncontrolledTooltip>
-                  </NavItem>
+                  {socialMedias.map((item) => {
+                    return[
+                      <NavItem>
+                        <NavLink
+                          className="nav-link-icon"
+                          href={`${item.href}`}
+                          id={item.name}
+                          target="_blank"
+                        >
+                          <i className={item.icon} />
+                          <span className="nav-link-inner--text d-lg-none ml-2">
+                            {item.name}
+                          </span>
+                        </NavLink>
+                        <UncontrolledTooltip delay={0} target={item.name}>
+                          {item.tooltip}
+                        </UncontrolledTooltip>
+                      </NavItem>
+                    ]
+                  })}
+                  
                   <NavItem className="d-none d-lg-block ml-lg-4">
                     {/* <Button
                       className="btn-neutral btn-icon"
@@ -257,32 +258,95 @@ class DemoNavbar extends React.Component {
                         Download App
                       </span>
                     </Button> */}
-                    <Button
-                      className="btn-neutral btn-icon"
-                      color="default"
-                      // href={require("../../assets/app/softc-mobile-app.apk")} 
-                      href="/login"
-                    >
-                      <span className="btn-inner--icon">
-                        <i className="fa fa-sign-in mr-2 text-dark" />
-                      </span>
-                      <span className="nav-link-inner--text ml-1 text-dark">
-                        Login
-                      </span>
-                    </Button>
-                    <Button
-                      className="btn-default btn-icon bg-purple"
-                      // color="primary"
-                      // href={require("../../assets/app/softc-mobile-app.apk")} 
-                      href="/register"
-                    >
-                      <span className="btn-inner--icon">
-                        <i className="fa fa-check mr-2 text-white" />
-                      </span>
-                      <span className="nav-link-inner--text ml-1 text-white">
-                        Register
-                      </span>
-                    </Button>
+                    {this.state.user && 
+                     <><Button
+                     block
+                     className="mb-3"
+                     color="warning"
+                     type="button"
+                     onClick={() => this.toggleModal("notificationModal")}
+                   >
+                     <span className="btn-inner--icon">
+                         <i className="fa fa-user mr-2 text-white" />
+                        </span>
+                        <span className="nav-link-inner--text ml-1 text-white">
+                          {this.state.user}
+                        </span>
+                   </Button>
+                   <Modal
+                     className="modal-dialog-centered modal-danger"
+                     contentClassName="bg-gradient-danger"
+                     isOpen={this.state.notificationModal}
+                     toggle={() => this.toggleModal("notificationModal")}
+                   >
+                     <div className="modal-header">
+                       <h6 className="modal-title" id="modal-title-notification">
+                         Your attention is required!
+                       </h6>
+                       <button
+                         aria-label="Close"
+                         className="close"
+                         data-dismiss="modal"
+                         type="button"
+                         onClick={() => this.toggleModal("notificationModal")}
+                       >
+                         <span aria-hidden={true}>×</span>
+                       </button>
+                     </div>
+                     <div className="modal-body">
+                       <div className="py-3 text-center">
+                         <i className="ni ni-bell-55 ni-3x" />
+                         <h4 className="heading mt-4">Are you sure you want to log out?</h4>
+                         <p>
+                         Your unsaved changes will be lost.
+                         </p>
+                       </div>
+                     </div>
+                     <div className="modal-footer">
+                       
+                       <Button
+                         className="text-white"
+                         color="link"
+                         data-dismiss="modal"
+                         type="button"
+                         onClick={() => this.toggleModal("notificationModal")}
+                       >
+                         Close
+                       </Button>
+                       <Button className="btn-white  ml-auto" color="default" type="button" onClick={this.logout}>
+                         Logout
+                       </Button>
+                     </div>
+                   </Modal></>
+                    }
+
+                    {!this.state.user && (
+                      <Button
+                        className="btn-neutral btn-icon"
+                        color="default"
+                        href="/login"
+                      >
+                        <span className="btn-inner--icon">
+                          <i className="fa fa-sign-in mr-2 text-dark" />
+                        </span>
+                        <span className="nav-link-inner--text ml-1 text-dark">
+                          Login
+                        </span>
+                      </Button>
+                    )}
+                    {!this.state.user && (
+                      <Button
+                        className="btn-default btn-icon bg-purple"
+                        href="/register"
+                      >
+                        <span className="btn-inner--icon">
+                          <i className="fa fa-check mr-2 text-white" />
+                        </span>
+                        <span className="nav-link-inner--text ml-1 text-white">
+                          Register
+                        </span>
+                      </Button>
+                    )}
                   </NavItem>
                 </Nav>
               </UncontrolledCollapse>

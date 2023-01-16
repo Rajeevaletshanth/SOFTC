@@ -19,7 +19,14 @@
 import React from "react";
 
 // reactstrap components
-import { Button, Container, Row, Col, UncontrolledTooltip } from "reactstrap";
+import {
+  Button,
+  Container,
+  Row,
+  Col,
+  UncontrolledTooltip,
+  Badge,
+} from "reactstrap";
 
 const techArr = [
   {
@@ -76,6 +83,12 @@ const techArr = [
     src: require("../../../assets/img/technologies/solidity.png"),
     tooltip: "Solidity",
   },
+  {
+    id: "openai",
+    href: "https://openai.com/",
+    src: require("../../../assets/img/technologies/openai.png"),
+    tooltip: "Open AI",
+  },
   // {
   //   id: "photoshop",
   //   href: "https://www.adobe.com/",
@@ -100,13 +113,78 @@ class Technologies extends React.Component {
   render() {
     return (
       <>
-        <section className="section">
+        <section className="section section-lg bg-secondary">
+          <Container>
+            <Row className="row-grid align-items-center">
+              <Col className="order-md-2" md="6">
+                <img
+                  alt="..."
+                  className="img-fluid floating"
+                  src={require("assets/img/theme/promo-1.png")}
+                />
+              </Col>
+              <Col className="order-md-1" md="6">
+                <div className="pr-md-5">
+                  {/* <div className="icon icon-lg icon-shape icon-shape-primary shadow rounded-circle mb-5">
+                    <i className="ni ni-ui-04" />
+                  </div> */}
+                  <h3><i className="ni ni-ui-04" /> {" "}Optimized Software</h3>
+                  <p className="mt-4">
+                    When considering a software solution for your business, it
+                    is important to look for certain key features that will
+                    ensure the software is user-friendly, able to scale with
+                    your company's growth, and secure.
+                  </p>
+                  <ul className="list-unstyled mt-5">
+                    <li className="py-2">
+                      <div className="d-flex align-items-center">
+                        <div>
+                          <Badge className="badge-circle mr-3" color="warning">
+                            <i className="ni ni-satisfied" />
+                          </Badge>
+                        </div>
+                        <div>
+                          <h6 className="mb-0">User-friendly interface</h6>
+                        </div>
+                      </div>
+                    </li>
+                    <li className="py-2">
+                      <div className="d-flex align-items-center">
+                        <div>
+                          <Badge className="badge-circle mr-3" color="warning">
+                            <i className="ni ni-settings-gear-65" />
+                          </Badge>
+                        </div>
+                        <div>
+                          <h6 className="mb-0">Scalability</h6>
+                        </div>
+                      </div>
+                    </li>
+                    <li className="py-2">
+                      <div className="d-flex align-items-center">
+                        <div>
+                          <Badge className="badge-circle mr-3" color="warning">
+                            <i className="ni ni-lock-circle-open" />
+                          </Badge>
+                        </div>
+                        <div>
+                          <h6 className="mb-0">Security</h6>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </Col>
+            </Row>
+          </Container>
+          {/* </section>
+        <section className="section"> */}
           <Container>
             <Row className="row-grid justify-content-center">
-              <Col className="text-center" lg="10">
+              <Col className="text-center" lg="8">
                 {/* Available Technologies */}
                 <div className="text-center">
-                  <h4 className="display-4 mb-5 mt-5">
+                  <h4 className="mb-5 mt-5">
                     Technologies Powering Our Solutions
                   </h4>
                   <Row className="justify-content-center">

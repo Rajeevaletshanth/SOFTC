@@ -122,8 +122,8 @@ const ChatBot = () => {
         <BsFillChatDotsFill size={20} />
       </Button>
       <Modal isOpen={modal} toggle={toggle}>
-        <ModalHeader toggle={toggle} className="bg-warning ">
-          <b className=" text-white">SOFTC Assistant </b> <text className="text-white" style={{fontSize:"13px"}}>(Beta)</text>
+        <ModalHeader toggle={toggle} className="bg-primary ">
+          <b className=" text-white">SOFTC Assistant </b> <br/><text className="text-white" style={{fontSize:"10px"}}>(Powered by ChatGPT)</text>
         </ModalHeader>
         
         <ModalBody>
@@ -134,7 +134,7 @@ const ChatBot = () => {
                     {messages?.map((item, i) => (
                       <ListGroupItem className="border-0 mb-0">
                         <div className={item.user==="Assistant"? "float-left":"float-right"} style={{maxWidth:"300px"}}>
-                          <h6 className="mb-1 py-1 px-3 rounded " style={{backgroundColor: item.user==="Assistant"? "#f4f5f7" : "#ff4c2340"}}>{item.message}</h6>
+                          <h6 className="mb-1 py-1 px-3 rounded " style={{backgroundColor: item.user==="Assistant"? "#f4f5f7" : "#909ad7",color: item.user==="Assistant"? "#303030" : "white"}}>{item.message}</h6>
                         </div>
                       </ListGroupItem>
                     ))}
@@ -174,7 +174,7 @@ const ChatBot = () => {
             value={payload.prompt}
           />
           <Button
-            className="bg-warning text-white"
+            className="bg-primary text-white"
             disabled={loading}
             onClick={getResponse}
           >

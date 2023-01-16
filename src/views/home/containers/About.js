@@ -66,7 +66,7 @@ export default function JavaScript() {
   const [emailFocus, setEmailFocus] = React.useState(false);
   const [passwordFocus, setPasswordFocus] = React.useState(false);
   return (
-    <div className=" section-secondary" >
+    <div className=" section-secondary" id="aboutus">
       <div className="section">
         <Container>
           {/* <div className="title">

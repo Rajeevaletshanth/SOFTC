@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 
 import {
   Button,
@@ -19,8 +19,45 @@ import { UncontrolledAlert } from "reactstrap";
 
 import SimpleFooter from "components/Footers/SimpleFooter.js";
 // import CardsFooter from "components/Footers/CardsFooter";
+import { loginApi } from "../../../services/authServices";
+import { useHistory } from "react-router-dom";
 
 const Login = () => {
+  const history = useHistory();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("")
+
+  const [message, setMessage] = useState({ response: "", message: "" });
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    if(localStorage.getItem("token")){
+      history.push('/')
+    }
+  },[])
+
+  const handleSubmit = async(e) => {
+    e.preventDefault();
+    const data = {
+      email:email,
+      password:password,
+      signedIn: true
+    }
+    setLoading(true)
+    const response = await loginApi(data)
+    if(response.data){
+      setLoading(false)
+      if(response.data.isLoggedIn){
+        localStorage.setItem("user-info", JSON.stringify(response.data.user))
+        localStorage.setItem("token", response.data.token)
+        // console.log(response.data)
+        history.push("/");
+      }else{
+        setMessage({ response: "danger", message: response.data.message });
+      }
+    }
+  }
+
   return (
     <>
       {/* <DemoNavbar /> */}
@@ -85,6 +122,9 @@ const Login = () => {
                     <div className="text-center text-muted mb-4">
                       <b>Login</b>
                     </div>
+                    {message.response && <div className={`alert alert-${message.response} alert-dismissible fade show`} role="alert">
+                      {message.message}
+                    </div>}
                     <Form role="form">
                       <FormGroup className="mb-3">
                         <InputGroup className="input-group-alternative">
@@ -93,7 +133,7 @@ const Login = () => {
                               <i className="ni ni-email-83" />
                             </InputGroupText>
                           </InputGroupAddon>
-                          <Input placeholder="Email" type="email" />
+                          <Input placeholder="Email" type="email" onChange={(e) => setEmail(e.target.value)}/>
                         </InputGroup>
                       </FormGroup>
                       <FormGroup>
@@ -107,6 +147,7 @@ const Login = () => {
                             placeholder="Password"
                             type="password"
                             autoComplete="off"
+                            onChange={(e) => setPassword(e.target.value)}
                           />
                         </InputGroup>
                       </FormGroup>
@@ -124,9 +165,17 @@ const Login = () => {
                         </label>
                       </div>
                       <div className="text-center">
-                        <Button className="my-4" color="primary" type="button">
+                        {/* <Button className="my-4" color="primary" type="button" onClick={handleSubmit}>
                           Sign in
-                        </Button>
+                        </Button> */}
+                        <button class="btn btn-primary" type="button" onClick={handleSubmit} disabled={loading?true:false}>
+                          {loading && <span
+                            class="spinner-border spinner-border-sm"
+                            role="status"
+                            aria-hidden="true"
+                          ></span>}
+                          {loading? "Signing In..." : "Sign In"} 
+                        </button>
                       </div>
                     </Form>
                   </CardBody>
@@ -135,7 +184,7 @@ const Login = () => {
                   <Col xs="6">
                     <a
                       className="text-light"
-                      href="#pablo"
+                      href="/forgot-password"
                       onClick={(e) => e.preventDefault()}
                     >
                       <small>Forgot password?</small>
@@ -144,8 +193,8 @@ const Login = () => {
                   <Col className="text-right" xs="6">
                     <a
                       className="text-light"
-                      href="#pablo"
-                      onClick={(e) => e.preventDefault()}
+                      href="/register"
+                      // onClick={(e) => e.preventDefault()}
                     >
                       <small>Create new account</small>
                     </a>

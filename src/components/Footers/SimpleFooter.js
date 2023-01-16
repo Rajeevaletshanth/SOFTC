@@ -11,6 +11,7 @@ import {
   Col,
   UncontrolledTooltip
 } from "reactstrap";
+import socialMediaLink from "../../configs/socialmedia.json";
 
 class SimpleFooter extends React.Component {
   render() {
@@ -18,8 +19,62 @@ class SimpleFooter extends React.Component {
       <>
         <footer className=" footer">
           <Container>
-            <Row className=" row-grid align-items-center mb-5">
-              <Col lg="6">
+            <Row className="row-grid align-items-center my-md">
+              <Col lg="5">
+                <h6><img src={require("../../assets/img/softc_logos/logo.png")} alt="" width={180} /></h6>
+                <div style={{fontSize:"13px"}}>
+                SOFTC is a software development firm that offers custom solutions and IT consulting. Expert team delivers solutions to optimize business operations and achieve goals.                </div>
+              </Col>
+              <Col lg="4" className="text-left">
+                <h6>Contact</h6>
+                <div style={{fontSize:"13px"}}>
+                  <i className="ni ni-building" />&nbsp;&nbsp; 8/1, Thalvupadu Road, Mannar <br/>
+                  <i className="ni ni-email-83" />&nbsp;&nbsp; getsoftc@outlook.com <br/>
+                  <i className="ni ni-mobile-button" />&nbsp;&nbsp; +94768021017 <br/>
+                </div>
+              </Col>
+              <Col lg="3">
+                <h6>Follow Us</h6>
+                <div style={{fontSize:"13px"}}>
+                  <a href={`${socialMediaLink.facebook}`}><i className="fa fa-facebook" />&nbsp;&nbsp; Facebook</a> <br/>
+                  <a href={`${socialMediaLink.linkedin}`}><i className="fa fa-linkedin" />&nbsp;&nbsp; LinkedIn</a> <br/>
+                  <a href={`${socialMediaLink.whatsapp}`}><i className="fa fa-whatsapp" />&nbsp;&nbsp; Whatsapp</a> <br/>                 
+                </div>
+              </Col>
+
+    {/* <div class="container text-center text-md-start mt-5">
+
+      <div class="row mt-3">
+
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+
+          <h6 class="text-uppercase fw-bold mb-4">
+            <i class="fas fa-gem me-3"></i>Company name
+          </h6>
+          <p>
+            Here you can use rows and columns to organize your footer content. Lorem ipsum
+            dolor sit amet, consectetur adipisicing elit.
+          </p>
+        </div>
+
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-1">
+
+          <h6 class="text-uppercase fw-bold mb-2">Contact</h6>
+          <p><i class="fas fa-home me-1"></i> New York, NY 10012, US</p>
+          <p>
+            <i class="fas fa-envelope me-1"></i>
+            info@example.com
+          </p>
+          <p><i class="fas fa-phone me-1"></i> + 01 234 567 88</p>
+          <p><i class="fas fa-print me-1"></i> + 01 234 567 89</p>
+        </div>
+
+      </div>
+
+    </div> */}
+
+
+              {/* <Col lg="6">
                 <h3 className=" text-primary font-weight-light mb-2">
                   Thank you for supporting us!
                 </h3>
@@ -84,11 +139,11 @@ class SimpleFooter extends React.Component {
                 <UncontrolledTooltip delay={0} target="tooltip495507257">
                   Star on Github
                 </UncontrolledTooltip>
-              </Col>
+              </Col> */}
             </Row>
             <hr />
             <Row className=" align-items-center justify-content-md-between">
-              <Col md="6">
+              <Col md="12" className="text-center">
                 <div className=" copyright">
                   Copyright © {new Date().getFullYear()}.{" "}All rights reserved by{" "}
                   <a
@@ -99,26 +154,6 @@ class SimpleFooter extends React.Component {
                   </a>
                   .
                 </div>
-              </Col>
-              <Col md="6">
-                <Nav className=" nav-footer justify-content-end">
-                  <NavItem>
-                    <NavLink
-                      href=""
-                      target="_blank"
-                    >
-                      About Us
-                    </NavLink>
-                  </NavItem>
-                  <NavItem>
-                    <NavLink
-                      href=""
-                      target="_blank"
-                    >
-                      Blog
-                    </NavLink>
-                  </NavItem>
-                </Nav>
               </Col>
             </Row>
           </Container>

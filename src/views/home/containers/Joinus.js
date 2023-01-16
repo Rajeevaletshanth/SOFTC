@@ -25,7 +25,7 @@ class Joinus extends React.Component {
   render() {
     return (
       <>
-        <section className="section bg-secondary">
+        <section className="section">
           <Container>
             <Row className="row-grid justify-content-center">
               <Col className="text-center" lg="12">

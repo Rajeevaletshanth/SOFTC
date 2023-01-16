@@ -22,18 +22,3 @@ export async function registerApi(data) {
             })
     })
 }
-
-// export async function login() {
-//     return new Promise((resole, reject) => {
-//         axios.get(`${config.SERVER_URL}/validate`,
-//             {
-//                 headers: {
-//                     'Authorization': `Bearer ${getAccessToken()}`
-//                 }
-//             }).then((res) => {
-//                 resole(res)
-//             }).catch((err) => {
-//                 reject(err)
-//             })
-//     })
-// }
