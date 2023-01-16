@@ -261,7 +261,7 @@ class DemoNavbar extends React.Component {
                     {this.state.user && 
                      <><Button
                      block
-                     className="mb-3"
+                     className="btn-warning"
                      color="warning"
                      type="button"
                      onClick={() => this.toggleModal("notificationModal")}
