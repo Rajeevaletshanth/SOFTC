@@ -91,6 +91,10 @@ const Register = () => {
       setLoading(false);
       setMessage({ response: "danger", message: "404 Error" });
     }
+    setTimeout(() => {
+      setMessage({ response: "warning", message: "Timeout, Please try again later!" });
+      setLoading(false)
+    }, 30000)
   };
 
   const handleSubmit = (e) => {

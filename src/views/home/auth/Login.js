@@ -56,6 +56,10 @@ const Login = () => {
         setMessage({ response: "danger", message: response.data.message });
       }
     }
+    setTimeout(() => {
+      setMessage({ response: "warning", message: "Timeout, Please try again later!" });
+      setLoading(false)
+    }, 30000)
   }
 
   return (
@@ -168,7 +172,7 @@ const Login = () => {
                         {/* <Button className="my-4" color="primary" type="button" onClick={handleSubmit}>
                           Sign in
                         </Button> */}
-                        <button class="btn btn-primary" type="button" onClick={handleSubmit} disabled={loading?true:false}>
+                        <button class="btn btn-primary mt-4" type="button" onClick={handleSubmit} disabled={loading?true:false}>
                           {loading && <span
                             class="spinner-border spinner-border-sm"
                             role="status"
