@@ -118,10 +118,11 @@ const ChatBot = () => {
         className="support-button rounded-circle text-center"
         color="warning"
         onClick={toggle}
+        zIndex={2}
       >
         <BsFillChatDotsFill size={20} />
       </Button>
-      <Modal isOpen={modal} toggle={toggle}>
+      <Modal isOpen={modal} toggle={toggle} zIndex={2}>
         <ModalHeader toggle={toggle} className="bg-primary ">
           <b className=" text-white">SOFTC Assistant </b> <br/><text className="text-white" style={{fontSize:"10px"}}>(Powered by ChatGPT)</text>
         </ModalHeader>

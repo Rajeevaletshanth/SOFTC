@@ -194,7 +194,7 @@ class ThreeSteps extends React.Component {
               <Col lg="12">
                 <div>
               <video id="myVideo" src={require('../../../assets/videos/softc intro - music.mp4')} style={{cursor:"pointer"}}  width="100%" height="100%" autoplay loop muted={this.state.muted?true:false}></video>
-              <Button className="float-right mute-button" style={{position:"relative", bottom:"45px", right:"10px", zIndex:1, opacity:"90%"}} color="white" size="sm" onClick={(e) => this.setState({muted: !this.state.muted})}> {this.state.muted? <><HiVolumeUp /> Unmute</> : <><HiVolumeOff /> Mute</> } </Button>
+              <Button className="float-right mute-button" style={{position:"relative", bottom:"45px", right:"10px", zIndex:0, opacity:"90%"}} color="white" size="sm" onClick={(e) => this.setState({muted: !this.state.muted})}> {this.state.muted? <><HiVolumeUp /> Unmute</> : <><HiVolumeOff /> Mute</> } </Button>
               </div>
               </Col>
             </Row>        
