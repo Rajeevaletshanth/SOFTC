@@ -76,8 +76,6 @@ class Index extends React.Component {
           <ThreeSteps />
           <About />
           <Testimonial />
-          
-          
           <Technologies />
           <WorkWithUs />
           <Joinus />
@@ -117,7 +115,7 @@ class Index extends React.Component {
         
         <CardsFooter />
         {/* <ImageBot /> */}
-        <ChatBot />
+        <ChatBot zIndex={3}/>
       </>
     );
   }
