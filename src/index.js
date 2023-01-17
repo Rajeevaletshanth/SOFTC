@@ -53,11 +53,11 @@ root.render(
         exact
         render={(props) => <Register {...props} />}
       />
-      <Route
+      {/* <Route
         path="/joinus"
         exact
         render={(props) => <Landing {...props} />}
-      />
+      /> */}
       {/* <Route
         path="/landing-page"
         exact

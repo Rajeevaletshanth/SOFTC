@@ -18,11 +18,23 @@ import {
 import { HiOutlineCheck } from "react-icons/hi";
 import { MdDashboardCustomize } from "react-icons/md";
 import { FaRecycle } from "react-icons/fa";
+import "../../../assets/css/main.css";
+
+import {
+  HiVolumeOff,
+  HiVolumeUp
+} from 'react-icons/hi'
 
 class ThreeSteps extends React.Component {
+  componentDidMount() {
+    document.getElementById("myVideo").play();
+    document.getElementById("myVideo").requestFullscreen();
+  }
+
   state = {
     iconTabs: 1,
     plainTabs: 1,
+    muted: true
   };
   toggleNavs = (e, state, index) => {
     e.preventDefault();
@@ -178,8 +190,16 @@ class ThreeSteps extends React.Component {
                 </Card>
               </Col>
             </Row>
-            
+            <Row>
+              <Col lg="12">
+                <div>
+              <video id="myVideo" src={require('../../../assets/videos/softc intro - music.mp4')} style={{cursor:"pointer"}}  width="100%" height="100%" autoplay loop muted={this.state.muted?true:false}></video>
+              <Button className="float-right mute-button" style={{position:"relative", bottom:"45px", right:"10px", zIndex:1, opacity:"90%"}} color="white" size="sm" onClick={(e) => this.setState({muted: !this.state.muted})}> {this.state.muted? <><HiVolumeUp /> Unmute</> : <><HiVolumeOff /> Mute</> } </Button>
+              </div>
+              </Col>
+            </Row>        
           </Container>
+          
         </section>
       </>
     );
