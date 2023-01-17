@@ -28,7 +28,7 @@ import {
 class ThreeSteps extends React.Component {
   componentDidMount() {
     document.getElementById("myVideo").play();
-    document.getElementById("myVideo").requestFullscreen();
+    // document.getElementById("myVideo").requestFullscreen();
   }
 
   state = {
