@@ -115,7 +115,7 @@ class Index extends React.Component {
         
         <CardsFooter />
         {/* <ImageBot /> */}
-        <ChatBot zIndex={3}/>
+        <ChatBot />
       </>
     );
   }

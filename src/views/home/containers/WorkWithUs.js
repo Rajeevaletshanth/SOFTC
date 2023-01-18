@@ -33,7 +33,12 @@ import {
   Container,
   Row,
   Col,
+  Modal
 } from "reactstrap";
+
+import {
+  MdMarkEmailRead
+} from 'react-icons/md'
 
 class WorkWithUs extends React.Component {
   state = {
@@ -51,6 +56,12 @@ class WorkWithUs extends React.Component {
     document.scrollingElement.scrollTop = 0;
     this.refs.main.scrollTop = 0;
   }
+
+  toggleModal = (state) => {
+    this.setState({
+      [state]: !this.state[state]
+    });
+  };
 
   validateEmail = (value) => {
     const emailRegex =
@@ -87,6 +98,7 @@ class WorkWithUs extends React.Component {
               message: response.data.message,
             },
           });
+          this.toggleModal("notificationModal")
         } else {
           this.setState({
             responseMessage: {
@@ -179,9 +191,14 @@ class WorkWithUs extends React.Component {
                       <p className="mt-0">
                         Please drop your contact details here.
                       </p>
-                      {this.state.responseMessage.response && <div className={`alert alert-${this.state.responseMessage.response} alert-dismissible fade show`} role="alert">
-                        {this.state.responseMessage.message}
-                      </div>}
+                      {this.state.responseMessage.response && (
+                        <div
+                          className={`alert alert-${this.state.responseMessage.response} alert-dismissible fade show`}
+                          role="alert"
+                        >
+                          {this.state.responseMessage.message}
+                        </div>
+                      )}
                       <FormGroup
                         className={classnames("mt-5", {
                           focused: this.state.nameFocused,
@@ -318,6 +335,37 @@ class WorkWithUs extends React.Component {
                 </Col>
               </Row>
             </Container>
+            <Modal
+              className="modal-dialog-centered modal-success"
+              contentClassName="bg-gradient-success"
+              isOpen={this.state.notificationModal}
+              toggle={() => this.toggleModal("notificationModal")}
+            >
+              <div className="modal-header">
+                <h6 className="modal-title" id="modal-title-notification" style={{fontSize:"13px"}}>
+                  Email Received
+                </h6>
+                <button
+                  aria-label="Close"
+                  className="close"
+                  data-dismiss="modal"
+                  type="button"
+                  onClick={() => this.toggleModal("notificationModal")}
+                >
+                  <span aria-hidden={true}>×</span>
+                </button>
+              </div>
+              <div className="modal-body">
+                <div className="py-3 text-center">
+                  {/* <i className="ni ni-check-bold ni-5x" /> */}
+                  <MdMarkEmailRead size={100}/>
+                  <h5 className="heading mt-4">
+                    We have received your information and will be in touch with you shortly.
+                  </h5>
+                  <p style={{fontSize:"11px"}}>A confirmation email has been sent to the email address provided.</p>
+                </div>
+              </div>
+            </Modal>
           </section>
         </main>
       </>
