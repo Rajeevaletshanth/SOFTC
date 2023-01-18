@@ -6,7 +6,7 @@ export async function contactApi(data) {
             ).then((res) => {
                 resole(res)
             }).catch((err) => {
-                reject(err)
+                resole(err)
             })
     })
 }
