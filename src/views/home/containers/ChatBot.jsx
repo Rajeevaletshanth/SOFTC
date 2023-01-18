@@ -118,7 +118,7 @@ const ChatBot = () => {
         className="support-button rounded-circle text-center"
         color="warning"
         onClick={toggle}
-        zIndex={2}
+        style={{ zIndex: 3 }}
       >
         <BsFillChatDotsFill size={20} />
       </Button>
