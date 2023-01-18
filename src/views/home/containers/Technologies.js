@@ -128,12 +128,17 @@ class Technologies extends React.Component {
                   {/* <div className="icon icon-lg icon-shape icon-shape-primary shadow rounded-circle mb-5">
                     <i className="ni ni-ui-04" />
                   </div> */}
-                  <h3><i className="ni ni-ui-04" /> {" "}Optimized Software</h3>
+                  <h3>
+                    <i className="ni ni-ui-04" /> Optimized Software
+                  </h3>
                   <p className="mt-4">
-                    When considering a software solution for your business, it
-                    is important to look for certain key features that will
-                    ensure the software is user-friendly, able to scale with
-                    your company's growth, and secure.
+                    Our team offers optimized software that runs efficiently
+                    with fast performance. We use the latest techniques in code
+                    optimization, memory management, and caching. Our software
+                    is designed for scalability, security and easy to use for
+                    any individual. We are committed to providing efficient and
+                    effective solutions for your business. Trust us to take your
+                    business to the next level with our optimized software.
                   </p>
                   <ul className="list-unstyled mt-5">
                     <li className="py-2">
