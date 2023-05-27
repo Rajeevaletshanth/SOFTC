@@ -49,7 +49,7 @@ class Joinus extends React.Component {
                   <Button
                     className="mb-3 mb-sm-0"
                     color="warning"
-                    href="#joinus"
+                    href="/careers"
                   >
                     Join Us Now
                   </Button>

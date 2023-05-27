@@ -17,7 +17,7 @@ class SimpleFooter extends React.Component {
   render() {
     return (
       <>
-        <footer className=" footer">
+        <footer className=" footer bg-white">
           <Container>
             <Row className="row-grid align-items-center my-md">
               <Col lg="5">

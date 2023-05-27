@@ -91,7 +91,7 @@ const ImageBot = () => {
             type="textarea"
             name="text"
             id="text"
-            placeholder="Ask anything"
+            placeholder="Prompt your imagination."
             readOnly={loading}
             onChange={(e) => {
               setPayLoad({

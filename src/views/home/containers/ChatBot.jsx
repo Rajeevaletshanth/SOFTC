@@ -99,6 +99,7 @@ const ChatBot = () => {
           responseHandler(res);
         })
         .catch((err) => {
+          console.log(err)
           setLoading(false);
         });
     }

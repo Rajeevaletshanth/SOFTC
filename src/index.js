@@ -34,8 +34,9 @@ import Landing from "views/joinus/Landing";
 
 import Index from "views/home";
 import Login from "views/home/auth/Login";
-
-
+import Careers from "views/careers/Careers";
+import VideoConference from "views/videoConference/VideoConference";
+import Room from "views/videoConference/Room";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -52,6 +53,20 @@ root.render(
         path="/register"
         exact
         render={(props) => <Register {...props} />}
+      />
+      <Route
+        path="/careers"
+        exact
+        render={(props) => <Careers {...props} />}
+      />
+      <Route
+        path="/conference"
+        exact
+        render={(props) => <VideoConference {...props} />}
+      />
+      <Route
+        path="/room/:roomID"
+        render={(props) => <Room {...props} />}
       />
       {/* <Route
         path="/joinus"
