@@ -56,6 +56,7 @@ import Testimonial from "./containers/Testimonial.js";
 import ChatBot from "./containers/ChatBot.jsx";
 import ImageBot from "./containers/ImageBot";
 import WorkWithUs from "./containers/WorkWithUs";
+import VideoConf from "./containers/VideoConf";
 
 
 class Index extends React.Component {
@@ -117,6 +118,7 @@ class Index extends React.Component {
         <CardsFooter />
         {/* <ImageBot /> */}
         <ChatBot />
+        <VideoConf/>
       </>
     );
   }
