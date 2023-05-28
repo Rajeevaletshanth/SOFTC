@@ -56,7 +56,7 @@ class Profile extends React.Component {
             {/* Circles background */}
             <div className="shape shape-style-1 shape-dark  main-theme alpha-4">
               <span />
-              <span />
+              <span /> 
               <span />
               <span />
               <span />

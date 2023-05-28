@@ -61,17 +61,19 @@ const Careers = () => {
         <section className="section section-lg bg-gradient-default">
           <Container className="pt-lg pb-300">
             <Row className="text-center justify-content-center">
-              <Col lg="10">
-                <h2 className="display-3 text-white">Build something</h2>
+              <Col lg="12">
+                <h2 className="display-3 text-white">Careers</h2>
                 <p className="lead text-white">
-                  According to the National Oceanic and Atmospheric
-                  Administration, Ted, Scambos, NSIDClead scentist, puts the
-                  potentially record low maximum sea ice extent tihs year down
-                  to low ice.
+                  We are a passionate team of individuals who believe in the power of innovation and creativity.
+                   At SOFTC, you'll have the chance to be part of a dynamic and fast-paced environment where your
+                    ideas are valued and your contributions make a real impact. We embrace a collaborative culture
+                     that encourages learning, growth, and teamwork. Join us as we embark on an incredible journey
+                      to build groundbreaking software solutions. Explore our available positions and become part of
+                       the growth story at SOFTC.
                 </p>
               </Col>
             </Row>
-            <Row className="row-grid mt-5">
+            {/* <Row className="row-grid mt-5">
               <Col lg="4">
                 <div className="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
                   <i className="ni ni-settings text-primary" />
@@ -102,7 +104,7 @@ const Careers = () => {
                   the bulk of the card's content.
                 </p>
               </Col>
-            </Row>
+            </Row> */}
           </Container>
           {/* SVG separator */}
           <div className="separator separator-bottom separator-skew zindex-100">
