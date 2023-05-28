@@ -24,6 +24,23 @@ import { Button, Card, Container, Row, Col } from "reactstrap";
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import SimpleFooter from "components/Footers/SimpleFooter.js";
 
+function calculateAge(birthDate) {
+  var today = new Date();
+  var birthDate = new Date(birthDate);
+  
+  var age = today.getFullYear() - birthDate.getFullYear();
+  
+  // Check if the birthday has already occurred this year
+  var hasBirthdayPassed = today.getMonth() < birthDate.getMonth() ||
+    (today.getMonth() === birthDate.getMonth() && today.getDate() < birthDate.getDate());
+
+  if (hasBirthdayPassed) {
+    age--;
+  }
+  
+  return age;
+}
+
 class Profile extends React.Component {
   componentDidMount() {
     document.documentElement.scrollTop = 0;
@@ -35,9 +52,9 @@ class Profile extends React.Component {
       <>
         <DemoNavbar />
         <main className="profile-page" ref="main">
-          <section className="section-profile-cover section-shaped my-0">
+          <section className="section-profile-cover section-shaped  my-0">
             {/* Circles background */}
-            <div className="shape shape-style-1 shape-default alpha-4">
+            <div className="shape shape-style-1 shape-dark  main-theme alpha-4">
               <span />
               <span />
               <span />
@@ -74,7 +91,7 @@ class Profile extends React.Component {
                           <img
                             alt="..."
                             className="rounded-circle"
-                            src={require("assets/img/theme/team-4-800x800.jpg")}
+                            src={require("assets/img/profiles/convo.jpg")}
                           />
                         </a>
                       </div>
@@ -86,26 +103,28 @@ class Profile extends React.Component {
                       <div className="card-profile-actions py-4 mt-lg-0">
                         <Button
                           className="mr-4"
-                          color="info"
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
-                          size="sm"
+                          color="default"
+                          href="https://github.com/Rajeevaletshanth"
+                          target="_blank"
+                          // onClick={(e) => e.preventDefault()}
+                          // size="sm"
                         >
-                          Connect
+                          Github
                         </Button>
                         <Button
                           className="float-right"
-                          color="default"
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
-                          size="sm"
+                          color="info"
+                          href="https://www.linkedin.com/in/ramachandran-rajeevaletshanth-99768b18b/"
+                          target="_blank"
+                          // onClick={(e) => e.preventDefault()}
+                          // size="sm"
                         >
-                          Message
+                          LinkedIn
                         </Button>
                       </div>
                     </Col>
                     <Col className="order-lg-1" lg="4">
-                      <div className="card-profile-stats d-flex justify-content-center">
+                      {/* <div className="card-profile-stats d-flex justify-content-center">
                         <div>
                           <span className="heading">22</span>
                           <span className="description">Friends</span>
@@ -118,40 +137,41 @@ class Profile extends React.Component {
                           <span className="heading">89</span>
                           <span className="description">Comments</span>
                         </div>
-                      </div>
+                      </div> */}
                     </Col>
                   </Row>
                   <div className="text-center mt-5">
                     <h3>
-                      Jessica Jones{" "}
-                      <span className="font-weight-light">, 27</span>
+                      Rajeevaletshanth R{" "}
+                      <span className="font-weight-light">, {calculateAge("1997-11-15")}</span>
                     </h3>
-                    <div className="h6 font-weight-300">
+                    {/* <div className="h6 font-weight-300">
                       <i className="ni location_pin mr-2" />
-                      Bucharest, Romania
-                    </div>
-                    <div className="h6 mt-4">
+                      Mannar, Sri Lanka
+                    </div> */}
+                    <div className="h6 mt-2">
                       <i className="ni business_briefcase-24 mr-2" />
-                      Solution Manager - Creative Tim Officer
+                      Software Engineer - SOFTC
                     </div>
-                    <div>
+                    {/* <div>
                       <i className="ni education_hat mr-2" />
                       University of Computer Science
-                    </div>
+                    </div> */}
                   </div>
                   <div className="mt-5 py-5 border-top text-center">
                     <Row className="justify-content-center">
                       <Col lg="9">
                         <p>
-                          An artist of considerable range, Ryan — the name taken
-                          by Melbourne-raised, Brooklyn-based Nick Murphy —
-                          writes, performs and records all of his own music,
-                          giving it a warm, intimate feel with a solid groove
-                          structure. An artist of considerable range.
+                          I'm a software engineer with 2 years of experience, specializing in Node.js, 
+                          React, and AWS. I hold a BSc (Hons) in Information Technology with a focus on 
+                          Software Engineering from SLIIT. With a passion for creating efficient and 
+                          innovative solutions, I take pride in delivering high-quality code and exceptional
+                          user experiences. On this platform, you'll find a showcase of my projects and 
+                          accomplishments.
                         </p>
-                        <a href="#pablo" onClick={(e) => e.preventDefault()}>
+                        {/* <a href="#pablo" onClick={(e) => e.preventDefault()}>
                           Show more
-                        </a>
+                        </a> */}
                       </Col>
                     </Row>
                   </div>

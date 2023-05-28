@@ -90,7 +90,7 @@ export default function JavaScript() {
               <Button
                 className="mt-4"
                 color="warning"
-                href="#aboutus"
+                href="/people"
               >
                 Our Team
               </Button>

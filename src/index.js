@@ -68,6 +68,11 @@ root.render(
         path="/room/:roomID"
         render={(props) => <Room {...props} />}
       />
+      <Route
+        path="/people"
+        exact
+        render={(props) => <Profile {...props} />}
+      />
       {/* <Route
         path="/joinus"
         exact
