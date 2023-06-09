@@ -118,7 +118,7 @@ class Index extends React.Component {
         <CardsFooter />
         {/* <ImageBot /> */}
         <ChatBot />
-        <VideoConf/>
+        {/* <VideoConf/> */}
       </>
     );
   }
