@@ -79,7 +79,7 @@ const ChatBot = () => {
         data: payload,
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${process.env.REACT_APP_OPENAI_SECRET}`,
+          Authorization: `Bearer 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`, //process.env.REACT_APP_OPENAI_SECRET
         }
       })
         .then((res) => {
